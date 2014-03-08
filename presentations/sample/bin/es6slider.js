@@ -1353,18 +1353,43 @@ var ES6Slider = function() {
       this.slides = [];
       this.currentSlide = 0;
     },
+    goTo: function(slideN) {
+      if (slideN < this.slides.length - 1 || slideN > 0) {
+        try {
+          throw undefined;
+        } catch (stateObj) {
+          document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+          document.querySelector('#es6slide_' + slideN).classList.remove('invisible');
+          this.currentSlide = slideN;
+          stateObj = {slide: this.currentSlide};
+          history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
+        }
+      }
+    },
     next: function() {
-      if (this.currentSlide <= this.slides.length) {
-        document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
-        document.querySelector('#es6slide_' + (this.currentSlide + 1)).classList.remove('invisible');
-        this.currentSlide += 1;
+      if (this.currentSlide < this.slides.length - 1) {
+        try {
+          throw undefined;
+        } catch (stateObj) {
+          document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+          document.querySelector('#es6slide_' + (this.currentSlide + 1)).classList.remove('invisible');
+          this.currentSlide += 1;
+          stateObj = {slide: this.currentSlide};
+          history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
+        }
       }
     },
     prev: function() {
       if (this.currentSlide > 0) {
-        document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
-        document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
-        this.currentSlide -= 1;
+        try {
+          throw undefined;
+        } catch (stateObj) {
+          document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+          document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
+          this.currentSlide -= 1;
+          stateObj = {slide: this.currentSlide};
+          history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
+        }
       }
     },
     addSlide: function() {
@@ -1375,6 +1400,7 @@ var ES6Slider = function() {
     },
     render: function() {
       var mainDOMContainer = document.querySelector('#es6slider');
+      var _this = this;
       this.slides.forEach(function(slide, index) {
         var DOMElementSlide = document.createElement('div');
         DOMElementSlide.id = 'es6slide_' + index;
@@ -1395,6 +1421,21 @@ var ES6Slider = function() {
           DOMElementSlide.appendChild(DOMElementImage);
         });
         mainDOMContainer.appendChild(DOMElementSlide);
+      });
+      document.addEventListener('keydown', function(event) {
+        var _evt = event || window.event;
+        switch (_evt.keyCode) {
+          case 37:
+            _this.prev();
+            break;
+          case 39:
+            _this.next();
+            break;
+        }
+      });
+      window.addEventListener('popstate', function(event) {
+        console.log(event.state.slide);
+        _this.goTo(event.state.slide);
       });
     }
   }, {});
