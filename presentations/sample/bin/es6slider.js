@@ -1372,7 +1372,10 @@ var ES6Slider = function() {
       }
     },
     next: function() {
-      if (this.currentSlide < this.slides.length - 1) {
+      var canNext = (function(x, y) {
+        return x < y;
+      });
+      if (canNext(this.currentSlide, this.slides.length - 1)) {
         try {
           throw undefined;
         } catch (stateObj) {
@@ -1385,7 +1388,10 @@ var ES6Slider = function() {
       }
     },
     prev: function() {
-      if (this.currentSlide > 0) {
+      var canPrev = (function(x) {
+        return x > 0;
+      });
+      if (canPrev(this.currentSlide)) {
         try {
           throw undefined;
         } catch (stateObj) {
@@ -1417,14 +1423,23 @@ var ES6Slider = function() {
           var DOMElementText = document.createElement('div');
           DOMElementText.setAttribute('class', 'es6slider text');
           DOMElementText.innerHTML = text.str;
+          var style = text.style.get();
+          if (style) {
+            Object.assign(DOMElementText.style, style);
+          }
           DOMElementSlide.appendChild(DOMElementText);
         });
         slide.images.forEach(function(image) {
           var DOMElementImage = document.createElement('img');
           DOMElementImage.src = image.src;
           DOMElementImage.setAttribute('class', 'es6slider image');
+          var style = image.style.get();
+          if (style) {
+            Object.assign(DOMElementImage.style, style);
+          }
           DOMElementSlide.appendChild(DOMElementImage);
         });
+        slide.DOMElement = DOMElementSlide;
         mainDOMContainer.appendChild(DOMElementSlide);
         var stateObj = {slide: 0};
       });
@@ -1449,6 +1464,27 @@ var ES6Slider = function() {
   }, {});
   return $ES6Slider;
 }();
+var Style = function() {
+  'use strict';
+  var $Style = ($__createClassNoExtends)({
+    constructor: function() {
+      this.style = {};
+    },
+    set: function(style) {
+      if (typeof style === 'object') {
+        Object.assign(this.style, style);
+      } else if (arguments.length === 2) {
+        this.style[arguments[0]] = arguments[1];
+      } else {
+        throw "Invalid style";
+      }
+    },
+    get: function() {
+      return this.style;
+    }
+  }, {});
+  return $Style;
+}();
 var Slide = function() {
   'use strict';
   var $Slide = ($__createClassNoExtends)({
@@ -1457,7 +1493,7 @@ var Slide = function() {
       this.title = title;
       this.images = [];
       this.texts = [];
-      this.style = {};
+      this.style = new Style();
     },
     addImage: function() {
       var image = arguments[0] !== (void 0) ? arguments[0]: new Image('img/default.png');
@@ -1473,16 +1509,6 @@ var Slide = function() {
         this.texts.push(text);
       } else {
         throw "Invalid text";
-      }
-    },
-    setStyle: function() {
-      var style = arguments[0] !== (void 0) ? arguments[0]: {background: '#fff'};
-      if (typeof style === 'object') {
-        Object.assign(this.style, style);
-      } else if (arguments.length === 2) {
-        this.style[arguments[0]] = arguments[1];
-      } else {
-        throw "Invalid style";
       }
     }
   }, {});
@@ -1506,6 +1532,7 @@ var Image = function() {
   'use strict';
   var $Image = ($__createClassNoExtends)({constructor: function(src) {
       this.src = src;
+      this.style = new Style();
     }}, {});
   return $Image;
 }();
@@ -1513,14 +1540,23 @@ var Text = function() {
   'use strict';
   var $Text = ($__createClassNoExtends)({constructor: function(str) {
       this.str = str;
+      this.style = new Style();
     }}, {});
   return $Text;
 }();
 ;(function() {
   var es6slider = new ES6Slider('ES6Slider');
   var slide1 = new Slide('Slide 1');
-  var image1 = new Image('img/myimage.png');
+  var image1 = new Image('img/backtothefuture.jpg');
+  image1.style.set({
+    width: '100%',
+    height: '100%'
+  });
   var text1 = new Text('ES6 is awesome!');
+  text1.style.set({
+    'color': 'red',
+    'font-size': '2em'
+  });
   slide1.addImage(image1);
   slide1.addText(text1);
   var slide2 = new Slide('Slide 2');
@@ -1535,4 +1571,5 @@ var Text = function() {
   es6slider.addSlide(slide2);
   es6slider.addSlide(slide3);
   es6slider.render();
+  console.log(es6slider);
 }());

@@ -19,7 +19,9 @@ class ES6Slider {
     }
 
 	next () {
-        if (this.currentSlide < this.slides.length - 1) {
+        let canNext = (x, y) => x < y; /* ES6 arrow functions */
+
+        if (canNext(this.currentSlide, this.slides.length - 1)) {
             document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
             document.querySelector('#es6slide_' + (this.currentSlide + 1)).classList.remove('invisible');            
             let stateObj = { slide : this.currentSlide };
@@ -29,7 +31,9 @@ class ES6Slider {
 	}
 
 	prev () {
-        if (this.currentSlide > 0) {
+        let canPrev = x => x > 0; /* ES6 arrow functions */
+
+        if (canPrev(this.currentSlide)) {
             document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
             document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
             let stateObj = { slide : this.currentSlide };
@@ -61,6 +65,10 @@ class ES6Slider {
                 let DOMElementText = document.createElement('div');
                 DOMElementText.setAttribute('class', 'es6slider text');
                 DOMElementText.innerHTML = text.str;
+                let style = text.style.get();
+                if (style) {
+                    Object.assign(DOMElementText.style, style); /* ES6 Object.assign merging objects */
+                }
                 DOMElementSlide.appendChild(DOMElementText);
             });
 
@@ -68,9 +76,13 @@ class ES6Slider {
                 let DOMElementImage = document.createElement('img');
                 DOMElementImage.src = image.src;
                 DOMElementImage.setAttribute('class', 'es6slider image');
+                let style = image.style.get();
+                if (style) {
+                    Object.assign(DOMElementImage.style, style); /* ES6 Object.assign merging objects */
+                }
                 DOMElementSlide.appendChild(DOMElementImage);
             });
-
+            slide.DOMElement = DOMElementSlide;
             mainDOMContainer.appendChild(DOMElementSlide);
             let stateObj = { slide : 0 };
             //history.replaceState(stateObj, "Slide " + 0, 0);
@@ -98,13 +110,35 @@ class ES6Slider {
 }
 
 /* ES6 Classes */
+class Style {
+
+    constructor() { /* ES6 construcor | ES6 default paramaters */
+        this.style = {};
+    }
+
+    set (style) { /* ES6 default paramaters */
+        if (typeof style === 'object') {
+            Object.assign(this.style, style); /* ES6 Object.assign merging objects */
+        } else if (arguments.length === 2) {
+            this.style[arguments[0]] = arguments[1];
+        } else {
+            throw "Invalid style";
+        }
+    }
+
+    get () {
+        return this.style;
+    }
+}
+
+/* ES6 Classes */
 class Slide {
 
 	constructor(title = 'New slide') { /* ES6 construcor | ES6 default paramaters */
         this.title = title;
         this.images = [];
     	this.texts = [];
-        this.style = {};
+        this.style = new Style();
     }
 
     addImage (image = new Image('img/default.png')) { /* ES6 default paramaters */
@@ -120,16 +154,6 @@ class Slide {
             this.texts.push(text);
         } else {
             throw "Invalid text";
-        }
-    }
-
-    setStyle (style = { background : '#fff'} ) { /* ES6 default paramaters */
-        if (typeof style === 'object') {
-            Object.assign(this.style, style); /* ES6 Object.assign merging objects */
-        } else if (arguments.length === 2) {
-            this.style[arguments[0]] = arguments[1];
-        } else {
-            throw "Invalid style";
         }
     }
 }
@@ -152,6 +176,7 @@ class Image {
 
 	constructor(src) {
         this.src = src;
+        this.style = new Style();
     }
 }
 
@@ -160,5 +185,6 @@ class Text {
 
 	constructor(str) {
         this.str = str;
+        this.style = new Style();
     }
 }

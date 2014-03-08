@@ -3,8 +3,16 @@
 	let es6slider = new ES6Slider('ES6Slider');
 
 	let slide1 = new Slide('Slide 1');
-	let image1 = new Image('img/myimage.png');
+	let image1 = new Image('img/backtothefuture.jpg');
+	image1.style.set({
+		width : '100%',
+		height : '100%'
+	});
 	let text1 = new Text('ES6 is awesome!');
+	text1.style.set({
+		'color' : 'red',
+		'font-size' : '2em'
+	});
 	slide1.addImage(image1);
 	slide1.addText(text1);
 
@@ -22,5 +30,7 @@
 	es6slider.addSlide(slide2);
 	es6slider.addSlide(slide3);
 	es6slider.render();
+
+	console.log(es6slider);
 
 }());
