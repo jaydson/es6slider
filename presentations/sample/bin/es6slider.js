@@ -1351,18 +1351,51 @@ var ES6Slider = function() {
     constructor: function(name) {
       this.name = name;
       this.slides = [];
+      this.currentSlide = 0;
     },
     next: function() {
-      console.log('next');
+      if (this.currentSlide <= this.slides.length) {
+        document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+        document.querySelector('#es6slide_' + (this.currentSlide + 1)).classList.remove('invisible');
+        this.currentSlide += 1;
+      }
     },
     prev: function() {
-      console.log('prev');
+      if (this.currentSlide > 0) {
+        document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+        document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
+        this.currentSlide -= 1;
+      }
     },
     addSlide: function() {
       var slide = arguments[0] !== (void 0) ? arguments[0]: new Slide();
       if (slide instanceof Slide) {
         this.slides.push(slide);
       }
+    },
+    render: function() {
+      var mainDOMContainer = document.querySelector('#es6slider');
+      this.slides.forEach(function(slide, index) {
+        var DOMElementSlide = document.createElement('div');
+        DOMElementSlide.id = 'es6slide_' + index;
+        DOMElementSlide.setAttribute('class', 'es6slider slide invisible');
+        if (index === 0) {
+          DOMElementSlide.classList.remove('invisible');
+        }
+        slide.texts.forEach(function(text) {
+          var DOMElementText = document.createElement('div');
+          DOMElementText.setAttribute('class', 'es6slider text');
+          DOMElementText.innerHTML = text.str;
+          DOMElementSlide.appendChild(DOMElementText);
+        });
+        slide.images.forEach(function(image) {
+          var DOMElementImage = document.createElement('img');
+          DOMElementImage.src = image.src;
+          DOMElementImage.setAttribute('class', 'es6slider image');
+          DOMElementSlide.appendChild(DOMElementImage);
+        });
+        mainDOMContainer.appendChild(DOMElementSlide);
+      });
     }
   }, {});
   return $ES6Slider;
@@ -1373,14 +1406,14 @@ var Slide = function() {
     constructor: function() {
       var title = arguments[0] !== (void 0) ? arguments[0]: 'New slide';
       this.title = title;
-      this.image = [];
-      this.text = [];
+      this.images = [];
+      this.texts = [];
       this.style = {};
     },
     addImage: function() {
       var image = arguments[0] !== (void 0) ? arguments[0]: new Image('img/default.png');
       if (image instanceof Image) {
-        this.image.push(image);
+        this.images.push(image);
       } else {
         throw "Invalid image";
       }
@@ -1388,7 +1421,7 @@ var Slide = function() {
     addText: function() {
       var text = arguments[0] !== (void 0) ? arguments[0]: new Text('Your text here...');
       if (text instanceof Text) {
-        this.text.push(text);
+        this.texts.push(text);
       } else {
         throw "Invalid text";
       }
@@ -1438,9 +1471,15 @@ var Text = function() {
   var es6slider = new ES6Slider('ES6Slider');
   var slide1 = new Slide('Slide 1');
   var image1 = new Image('img/myimage.png');
-  var text1 = new Text('ES6 is awasome!');
+  var text1 = new Text('ES6 is awesome!');
   slide1.addImage(image1);
   slide1.addText(text1);
+  var slide2 = new Slide('Slide 2');
+  var image2 = new Image('img/myimage2.png');
+  var text2 = new Text('ES6 is fu***** awesome!');
+  slide2.addImage(image2);
+  slide2.addText(text2);
   es6slider.addSlide(slide1);
-  console.log(es6slider);
+  es6slider.addSlide(slide2);
+  es6slider.render();
 }());

@@ -3,6 +3,15 @@ module.exports = function (grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
+        /* Copy dependencies */
+        copy: {
+            main: {
+                files: [{
+					src: ['src/es6slider.css'], dest: 'presentations/sample/css/es6slider.css', filter: 'isFile'
+                }]
+            }
+        },
+
 		concat: {
 			options: {
 				separator: ';',
@@ -33,7 +42,7 @@ module.exports = function (grunt) {
 				deferredFunctions : true,
 				types : true,
 				annotations : true,
-				modules : true
+				modules : true,
 			},
 
 			es6slider : {
@@ -52,5 +61,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     /* Tasks */
-    grunt.registerTask('default', ['traceur','concat','uglify']);
+    grunt.registerTask('default', ['traceur','concat','uglify','copy']);
 }

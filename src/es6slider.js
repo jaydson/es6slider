@@ -4,20 +4,58 @@ class ES6Slider {
 	constructor(name) {
         this.name = name;
         this.slides = [];
+        this.currentSlide = 0;
     }
 
 	next () {
-        console.log('next');
+        if (this.currentSlide <= this.slides.length) {
+            document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+            document.querySelector('#es6slide_' + (this.currentSlide + 1)).classList.remove('invisible');
+            this.currentSlide += 1;
+        }
 	}
 
 	prev () {
-        console.log('prev');
+        if (this.currentSlide > 0) {
+            document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+            document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
+            this.currentSlide -= 1;
+        }
 	}
 
     addSlide (slide = new Slide()) {
         if (slide instanceof Slide) {
             this.slides.push(slide);
         }
+    }
+
+    render () {
+        let mainDOMContainer = document.querySelector('#es6slider');
+        this.slides.forEach(function (slide, index) {
+            let DOMElementSlide = document.createElement('div');  /* ES6 Block scoped bindings let */
+
+            DOMElementSlide.id = 'es6slide_' + index;
+            DOMElementSlide.setAttribute('class','es6slider slide invisible');
+            if (index === 0) {
+                DOMElementSlide.classList.remove('invisible');
+            }            
+
+            slide.texts.forEach(function (text) {
+                let DOMElementText = document.createElement('div');
+                DOMElementText.setAttribute('class', 'es6slider text');
+                DOMElementText.innerHTML = text.str;
+                DOMElementSlide.appendChild(DOMElementText);
+            });
+
+            slide.images.forEach(function (image) {
+                let DOMElementImage = document.createElement('img');
+                DOMElementImage.src = image.src;
+                DOMElementImage.setAttribute('class', 'es6slider image');
+                DOMElementSlide.appendChild(DOMElementImage);
+            });
+
+            mainDOMContainer.appendChild(DOMElementSlide);
+        });
     }
 }
 
@@ -26,14 +64,14 @@ class Slide {
 
 	constructor(title = 'New slide') { /* ES6 construcor | ES6 default paramaters */
         this.title = title;
-        this.image = [];
-    	this.text = [];
+        this.images = [];
+    	this.texts = [];
         this.style = {};
     }
 
     addImage (image = new Image('img/default.png')) { /* ES6 default paramaters */
         if (image instanceof Image) {
-            this.image.push(image);
+            this.images.push(image);
         } else {
             throw "Invalid image";
         }
@@ -41,7 +79,7 @@ class Slide {
 
     addText (text = new Text('Your text here...')) { /* ES6 default paramaters */
         if (text instanceof Text) {
-            this.text.push(text);
+            this.texts.push(text);
         } else {
             throw "Invalid text";
         }
