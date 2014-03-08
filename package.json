@@ -1,0 +1,35 @@
+{
+  "name": "es6slider",
+  "description": "ES6 presentation tool",
+  "keywords": [
+    "es6",
+    "JavaScript",
+    "slideshow",
+    "presentation"
+  ],
+  "version": "0.0.1",
+  "homepage": "http://",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaydson/es6slider.git"
+  },
+  "author": "Jaydson Gomes <jayalemao@gmail.com> (http://jaydson.org/)",
+  "contributors": [],
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-traceur": "0.0.3",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.4.0"
+  },
+  "engines": [
+    "node >=0.4.0"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://jaydson.mit-license.org/"
+    }
+  ]
+}
