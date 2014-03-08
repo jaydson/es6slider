@@ -9,10 +9,11 @@ class ES6Slider {
 
     goTo (slideN) {
         if (slideN < this.slides.length - 1 || slideN > 0) {
+            let cur = document.location.href.split(/\/+/g).pop().split('.')[0];
             document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
             document.querySelector('#es6slide_' + slideN).classList.remove('invisible');
             this.currentSlide = slideN;
-            let stateObj = { slide : this.currentSlide };
+            let stateObj = { slide : cur };
             history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
         }
     }
@@ -20,10 +21,10 @@ class ES6Slider {
 	next () {
         if (this.currentSlide < this.slides.length - 1) {
             document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
-            document.querySelector('#es6slide_' + (this.currentSlide + 1)).classList.remove('invisible');
-            this.currentSlide += 1;
+            document.querySelector('#es6slide_' + (this.currentSlide + 1)).classList.remove('invisible');            
             let stateObj = { slide : this.currentSlide };
-            history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
+            this.currentSlide += 1;
+            history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);            
         }
 	}
 
@@ -31,8 +32,8 @@ class ES6Slider {
         if (this.currentSlide > 0) {
             document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
             document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
-            this.currentSlide -= 1;
             let stateObj = { slide : this.currentSlide };
+            this.currentSlide -= 1;
             history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
         }
 	}
@@ -71,6 +72,8 @@ class ES6Slider {
             });
 
             mainDOMContainer.appendChild(DOMElementSlide);
+            let stateObj = { slide : 0 };
+            //history.replaceState(stateObj, "Slide " + 0, 0);
         });
 
         document.addEventListener('keydown', function (event) {
@@ -86,8 +89,10 @@ class ES6Slider {
         });
 
         window.addEventListener('popstate', function (event) {
-            console.log(event.state.slide);
-            _this.goTo(event.state.slide);
+            if (event.state) {
+                console.log(event.state);
+                _this.goTo(event.state.slide);
+            }
         });
     }
 }

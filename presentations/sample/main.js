@@ -14,8 +14,13 @@
 	slide2.addImage(image2);
 	slide2.addText(text2);
 
+	let slide3 = new Slide('Slide 3');
+	let text3 = new Text('Look, this is another slide about ES6!');
+	slide3.addText(text3);
+
 	es6slider.addSlide(slide1);
 	es6slider.addSlide(slide2);
+	es6slider.addSlide(slide3);
 	es6slider.render();
 
 }());
