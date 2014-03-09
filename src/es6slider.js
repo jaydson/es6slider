@@ -5,6 +5,7 @@ class ES6Slider {
         this.name = name;
         this.slides = [];
         this.currentSlide = 0;
+        document.title = this.name;
     }
 
     goTo (slideN) {
@@ -59,7 +60,12 @@ class ES6Slider {
             DOMElementSlide.setAttribute('class','es6slider slide invisible');
             if (index === 0) {
                 DOMElementSlide.classList.remove('invisible');
-            }            
+            }
+
+            let style = slide.style.get();
+            if (style) {
+                Object.assign(DOMElementSlide.style, style); /* ES6 Object.assign merging objects */
+            }
 
             slide.texts.forEach(function (text) {
                 let DOMElementText = document.createElement('div');
@@ -139,6 +145,19 @@ class Slide {
         this.images = [];
     	this.texts = [];
         this.style = new Style();
+    }
+
+    setBackgroundImage (url) {
+        let img = new Image(url);
+        img.style.set({
+            width : '100%',
+            height : '100%',
+            position : 'absolute',
+            top : '0',
+            left : '0',
+            margin : '0'
+        });
+        this.images.push(img);
     }
 
     addImage (image = new Image('img/default.png')) { /* ES6 default paramaters */
