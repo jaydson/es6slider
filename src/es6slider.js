@@ -47,6 +47,7 @@ class ES6Slider {
         if (slide instanceof Slide) {
             this.slides.push(slide);
         }
+        return this;
     }
 
     render () {

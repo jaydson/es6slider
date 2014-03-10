@@ -45,24 +45,70 @@
 	let futurenow = new Slide('futurenow');
 	futurenow.setBackgroundImage('img/future-now.gif');
 
-	let slide2 = new Slide('ES6');
-	let text2 = new Text('ES6 is fu***** awesome!');
-	slide2.addText(text2);
+	let cronograma = new Slide('Cronograma');
+	cronograma.style.set({
+		backgroundColor : '#09311E'
+	});
+	let list = ['História',
+				'Arrows functions',
+				'Classes',
+				'Template Strings',
+				'default/rest/spread params',
+				'let + const',
+				'iterators + for..of',
+				'generators',
+				'comprehensions',
+				'modules',
+				'map + set + weakmap + weakset',
+				'proxies',
+				'symbols',
+				'promises',
+				'math + number + string + object APIs'];
+
+	/* ES6 Template strings */
+	let textCronograma = new Text(`<span style="font-style:italic;font-size:1.4em">~Cronograma~ </span><br>
+		 							<ul style="font-size:0.8em">
+		 								<li>${list[0]}</li>
+										<li>${list[1]}</li>
+										<li>${list[2]}</li>
+										<li>${list[3]}</li>
+										<li>${list[4]}</li>
+										<li>${list[5]}</li>
+										<li>${list[6]}</li>
+										<li>${list[7]}</li>
+										<li>${list[8]}</li>
+										<li>${list[9]}</li>
+										<li>${list[10]}</li>
+										<li>${list[11]}</li>
+										<li>${list[12]}</li>
+										<li>${list[13]}</li>
+										<li>${list[14]}</li>
+									</ul>
+								  `);
+	textCronograma.style.set({
+		color : '#fff',
+		fontSize : '0.6em',
+		position : 'absolute',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		zIndex : '99',
+		fontWeight : 'bold'
+	});
+	cronograma.addText(textCronograma);
 
 	let slide3 = new Slide('Slide 3');
 	let text3 = new Text('Look, this is another slide about ES6!');
 	slide3.addText(text3);
 
-	es6slider.addSlide(slide1);
-	es6slider.addSlide(me);
-	es6slider.addSlide(enthusiasm1);
-	es6slider.addSlide(enthusiasm2);
-	es6slider.addSlide(douglas);
-	es6slider.addSlide(brendan);
-	es6slider.addSlide(futurenow);
-	es6slider.addSlide(slide2);
-	es6slider.addSlide(slide3);
-	es6slider.render();
+	es6slider.addSlide(slide1)
+			.addSlide(me)
+			.addSlide(enthusiasm1)
+			.addSlide(enthusiasm2)
+			.addSlide(douglas)
+			.addSlide(brendan)
+			.addSlide(futurenow)
+			.addSlide(cronograma)
+			.addSlide(slide3)
+			.render();
 
 	console.log(es6slider);
 

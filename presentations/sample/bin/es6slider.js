@@ -1409,6 +1409,7 @@ var ES6Slider = function() {
       if (slide instanceof Slide) {
         this.slides.push(slide);
       }
+      return this;
     },
     render: function() {
       var mainDOMContainer = document.querySelector('#es6slider');
@@ -1597,21 +1598,22 @@ var Text = function() {
   slide1.addText(text1);
   var futurenow = new Slide('futurenow');
   futurenow.setBackgroundImage('img/future-now.gif');
-  var slide2 = new Slide('ES6');
-  var text2 = new Text('ES6 is fu***** awesome!');
-  slide2.addText(text2);
+  var cronograma = new Slide('Cronograma');
+  cronograma.style.set({backgroundColor: '#09311E'});
+  var list = ['História', 'Arrows functions', 'Classes', 'Template Strings', 'default/rest/spread params', 'let + const', 'iterators + for..of', 'generators', 'comprehensions', 'modules', '>map + set + weakmap + weakset', 'proxies', 'symbols', 'promises', 'math + number + string + object APIs'];
+  var textCronograma = new Text(("<span style=\"font-style:italic;font-size:1.4em\">~Cronograma~ </span><br>\n\t\t \t\t\t\t\t\t\t<ul style=\"font-size:0.8em\">\n\t\t \t\t\t\t\t\t\t\t<li>" + list[0] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[1] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[2] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[3] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[4] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[5] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[6] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[7] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[8] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[9] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[10] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[11] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[12] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[13] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[14] + "</li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t  "));
+  textCronograma.style.set({
+    color: '#fff',
+    fontSize: '0.6em',
+    position: 'absolute',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    zIndex: '99',
+    fontWeight: 'bold'
+  });
+  cronograma.addText(textCronograma);
   var slide3 = new Slide('Slide 3');
   var text3 = new Text('Look, this is another slide about ES6!');
   slide3.addText(text3);
-  es6slider.addSlide(slide1);
-  es6slider.addSlide(me);
-  es6slider.addSlide(enthusiasm1);
-  es6slider.addSlide(enthusiasm2);
-  es6slider.addSlide(douglas);
-  es6slider.addSlide(brendan);
-  es6slider.addSlide(futurenow);
-  es6slider.addSlide(slide2);
-  es6slider.addSlide(slide3);
-  es6slider.render();
+  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(futurenow).addSlide(cronograma).addSlide(slide3).render();
   console.log(es6slider);
 }());
