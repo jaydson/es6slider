@@ -65,7 +65,7 @@
 				'promises',
 				'math + number + string + object APIs'];
 
-	/* ES6 Template strings */
+	/* ES6 Template strings (multiline)*/
 	let textCronograma = new Text(`<span style="font-style:italic;font-size:1.4em">~Cronograma~ </span><br>
 		 							<ul style="font-size:0.8em">
 		 								<li>${list[0]}</li>
@@ -95,9 +95,67 @@
 	});
 	cronograma.addText(textCronograma);
 
-	let slide3 = new Slide('Slide 3');
-	let text3 = new Text('Look, this is another slide about ES6!');
-	slide3.addText(text3);
+	let historia = new Slide('historia');
+	historia.setBackgroundImage('img/senta-que-la-vem-historia.gif');
+
+	let ecma262 = new Slide('historia');
+	ecma262.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let brendanYoung = new Slide('brendanYoung');
+	brendanYoung.setBackgroundImage('img/brendan-young.jpg');
+
+	let ecma262Text = new Text(`ECMA-262`);
+	ecma262Text.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff',
+		marginTop : '1em'
+	});
+	ecma262.addText(ecma262Text);
+
+	let nineties = new Slide('nineties');
+	nineties.style.set({
+		backgroundColor : '#09311E'
+	});
+	let ninetiesT = new Text(`
+		<div style="font-style:italic;font-size:3.2em">~1995~</div>
+		<div>Mocha</div>
+		<div>LiveScript</div>
+		<div>JavaScript</div>
+		<div>ECMAScript</div>
+	`);
+	ninetiesT.style.set({
+		color : '#fff',
+		fontSize : '1em',
+		position : 'absolute',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		zIndex : '99',
+		fontWeight : 'bold'
+	});
+	nineties.addText(ninetiesT);
+
+	let ninetiesECMA3 = new Slide('ninetiesECMA3');
+	ninetiesECMA3.style.set({
+		backgroundColor : '#09311E'
+	});
+	let ninetiesECMA3T = new Text(`
+		<div style="font-style:italic;font-size:3.2em">~1999 - ECMAScript 3~</div>
+		<div>Versão suportada na maioria dos browsers</div>
+		<div>Introduziu algumas features como expressões regulares, try/catch, entre outras</div>
+	`);
+	ninetiesECMA3T.style.set({
+		color : '#fff',
+		fontSize : '1em',
+		position : 'absolute',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		zIndex : '99',
+		fontWeight : 'bold'
+	});
+	ninetiesECMA3.addText(ninetiesECMA3T);
 
 	es6slider.addSlide(slide1)
 			.addSlide(me)
@@ -105,9 +163,13 @@
 			.addSlide(enthusiasm2)
 			.addSlide(douglas)
 			.addSlide(brendan)
-			.addSlide(futurenow)
 			.addSlide(cronograma)
-			.addSlide(slide3)
+			.addSlide(historia)
+			.addSlide(brendanYoung)
+			.addSlide(nineties)
+			.addSlide(ninetiesECMA3)
+			.addSlide(ecma262)
+			.addSlide(futurenow)
 			.render();
 
 	console.log(es6slider);

@@ -146,6 +146,7 @@ class Slide {
         this.images = [];
     	this.texts = [];
         this.style = new Style();
+        return this;
     }
 
     setBackgroundImage (url) {
@@ -167,6 +168,8 @@ class Slide {
         } else {
             throw "Invalid image";
         }
+
+        return this;
     }
 
     addText (text = new Text('Your text here...')) { /* ES6 default paramaters */
@@ -175,6 +178,8 @@ class Slide {
         } else {
             throw "Invalid text";
         }
+
+        return this;
     }
 }
 
@@ -182,13 +187,15 @@ class Slide {
 class RegularSlide extends Slide {
     constructor(title) {
         super(title); /* ES6 super call */
-    }
+        return this;
+    }    
 }
 
 /* ES6 Classes */
 class MasterSlide extends Slide {
     constructor() {
-    }
+        return this;
+    }    
 }
 
 /* ES6 Classes */
@@ -197,6 +204,7 @@ class Image {
 	constructor(src) {
         this.src = src;
         this.style = new Style();
+        return this;
     }
 }
 
@@ -206,5 +214,6 @@ class Text {
 	constructor(str) {
         this.str = str;
         this.style = new Style();
+        return this;
     }
 }

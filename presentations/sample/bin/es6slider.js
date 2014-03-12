@@ -1500,6 +1500,7 @@ var Slide = function() {
       this.images = [];
       this.texts = [];
       this.style = new Style();
+      return this;
     },
     setBackgroundImage: function(url) {
       var img = new Image(url);
@@ -1520,6 +1521,7 @@ var Slide = function() {
       } else {
         throw "Invalid image";
       }
+      return this;
     },
     addText: function() {
       var text = arguments[0] !== (void 0) ? arguments[0]: new Text('Your text here...');
@@ -1528,6 +1530,7 @@ var Slide = function() {
       } else {
         throw "Invalid text";
       }
+      return this;
     }
   }, {});
   return $Slide;
@@ -1537,13 +1540,16 @@ var RegularSlide = function($__super) {
   var $__proto = $__getProtoParent($__super);
   var $RegularSlide = ($__createClass)({constructor: function(title) {
       $__superCall(this, $__proto, "constructor", [title]);
+      return this;
     }}, {}, $__proto, $__super, true);
   return $RegularSlide;
 }(Slide);
 var MasterSlide = function($__super) {
   'use strict';
   var $__proto = $__getProtoParent($__super);
-  var $MasterSlide = ($__createClass)({constructor: function() {}}, {}, $__proto, $__super, true);
+  var $MasterSlide = ($__createClass)({constructor: function() {
+      return this;
+    }}, {}, $__proto, $__super, true);
   return $MasterSlide;
 }(Slide);
 var Image = function() {
@@ -1551,6 +1557,7 @@ var Image = function() {
   var $Image = ($__createClassNoExtends)({constructor: function(src) {
       this.src = src;
       this.style = new Style();
+      return this;
     }}, {});
   return $Image;
 }();
@@ -1559,6 +1566,7 @@ var Text = function() {
   var $Text = ($__createClassNoExtends)({constructor: function(str) {
       this.str = str;
       this.style = new Style();
+      return this;
     }}, {});
   return $Text;
 }();
@@ -1600,7 +1608,7 @@ var Text = function() {
   futurenow.setBackgroundImage('img/future-now.gif');
   var cronograma = new Slide('Cronograma');
   cronograma.style.set({backgroundColor: '#09311E'});
-  var list = ['História', 'Arrows functions', 'Classes', 'Template Strings', 'default/rest/spread params', 'let + const', 'iterators + for..of', 'generators', 'comprehensions', 'modules', '>map + set + weakmap + weakset', 'proxies', 'symbols', 'promises', 'math + number + string + object APIs'];
+  var list = ['História', 'Arrows functions', 'Classes', 'Template Strings', 'default/rest/spread params', 'let + const', 'iterators + for..of', 'generators', 'comprehensions', 'modules', 'map + set + weakmap + weakset', 'proxies', 'symbols', 'promises', 'math + number + string + object APIs'];
   var textCronograma = new Text(("<span style=\"font-style:italic;font-size:1.4em\">~Cronograma~ </span><br>\n\t\t \t\t\t\t\t\t\t<ul style=\"font-size:0.8em\">\n\t\t \t\t\t\t\t\t\t\t<li>" + list[0] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[1] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[2] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[3] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[4] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[5] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[6] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[7] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[8] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[9] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[10] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[11] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[12] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[13] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[14] + "</li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t  "));
   textCronograma.style.set({
     color: '#fff',
@@ -1611,9 +1619,46 @@ var Text = function() {
     fontWeight: 'bold'
   });
   cronograma.addText(textCronograma);
-  var slide3 = new Slide('Slide 3');
-  var text3 = new Text('Look, this is another slide about ES6!');
-  slide3.addText(text3);
-  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(futurenow).addSlide(cronograma).addSlide(slide3).render();
+  var historia = new Slide('historia');
+  historia.setBackgroundImage('img/senta-que-la-vem-historia.gif');
+  var ecma262 = new Slide('historia');
+  ecma262.style.set({backgroundColor: '#09311E'});
+  var brendanYoung = new Slide('brendanYoung');
+  brendanYoung.setBackgroundImage('img/brendan-young.jpg');
+  var ecma262Text = new Text("ECMA-262");
+  ecma262Text.style.set({
+    fontSize: '3.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff',
+    marginTop: '1em'
+  });
+  ecma262.addText(ecma262Text);
+  var nineties = new Slide('nineties');
+  nineties.style.set({backgroundColor: '#09311E'});
+  var ninetiesT = new Text("\n\t\t<div style=\"font-style:italic;font-size:3.2em\">~1995~</div>\n\t\t<div>Mocha</div>\n\t\t<div>LiveScript</div>\n\t\t<div>JavaScript</div>\n\t\t<div>ECMAScript</div>\n\t");
+  ninetiesT.style.set({
+    color: '#fff',
+    fontSize: '1em',
+    position: 'absolute',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    zIndex: '99',
+    fontWeight: 'bold'
+  });
+  nineties.addText(ninetiesT);
+  var ninetiesECMA3 = new Slide('ninetiesECMA3');
+  ninetiesECMA3.style.set({backgroundColor: '#09311E'});
+  var ninetiesECMA3T = new Text("\n\t\t<div style=\"font-style:italic;font-size:3.2em\">~1999 - ECMAScript 3~</div>\n\t\t<div>Versão suportada na maioria dos browsers</div>\n\t\t<div>Introduziu algumas features como expressões regulares, try/catch, entre outras</div>\n\t");
+  ninetiesECMA3T.style.set({
+    color: '#fff',
+    fontSize: '1em',
+    position: 'absolute',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    zIndex: '99',
+    fontWeight: 'bold'
+  });
+  ninetiesECMA3.addText(ninetiesECMA3T);
+  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ninetiesECMA3).addSlide(ecma262).addSlide(futurenow).render();
   console.log(es6slider);
 }());
