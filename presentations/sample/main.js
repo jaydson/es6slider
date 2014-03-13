@@ -6,10 +6,10 @@
 	me.style.set({
 		backgroundColor : '#09311E'
 	});
-	let bio = new Text('<span style="font-style:italic;font-size:1.6em">~Jaydson Gomes~ </span><br> * Entusiasta JavaScript <br> * FrontEnd Engineer no Terra <br> * Curador da BrazilJS Conf/RSJS/FrontInPoa');
+	let bio = new Text('<span style="font-style:italic;font-size:1.3em;color:#F3EA1A">~Jaydson Gomes~ </span><br> * Entusiasta JavaScript <br> * FrontEnd Engineer no Terra <br> * Curador da BrazilJS Conf/RSJS/FrontInPoa');
 	bio.style.set({
 		color : '#fff',
-		fontSize : '1.5em',
+		fontSize : '1.3em',
 		position : 'absolute',
 		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
 		zIndex : '99',
@@ -98,25 +98,6 @@
 	let historia = new Slide('historia');
 	historia.setBackgroundImage('img/senta-que-la-vem-historia.gif');
 
-	let ecma262 = new Slide('historia');
-	ecma262.style.set({
-		backgroundColor : '#09311E'
-	});
-
-	let brendanYoung = new Slide('brendanYoung');
-	brendanYoung.setBackgroundImage('img/brendan-young.jpg');
-
-	let ecma262Text = new Text(`ECMA-262`);
-	ecma262Text.style.set({
-		fontSize : '3.5em',
-		textAlign : 'center',
-		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
-		fontWeight : 'bold',
-		color : '#fff',
-		marginTop : '1em'
-	});
-	ecma262.addText(ecma262Text);
-
 	let nineties = new Slide('nineties');
 	nineties.style.set({
 		backgroundColor : '#09311E'
@@ -143,7 +124,7 @@
 		backgroundColor : '#09311E'
 	});
 	let ninetiesECMA3T = new Text(`
-		<div style="font-style:italic;font-size:3.2em">~1999 - ECMAScript 3~</div>
+		<div style="font-style:italic;font-size:2.2em">~1999 - ES3~</div>
 		<div>Versão suportada na maioria dos browsers</div>
 		<div>Introduziu algumas features como expressões regulares, try/catch, entre outras</div>
 	`);
@@ -157,6 +138,128 @@
 	});
 	ninetiesECMA3.addText(ninetiesECMA3T);
 
+	let brendanYoung = new Slide('brendanYoung');
+	brendanYoung.setBackgroundImage('img/brendan-young.jpg');
+
+	let ecma262 = new Slide('historia');
+	ecma262.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let ecma262Text = new Text(`ECMA-262`);
+	ecma262Text.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff',
+		marginTop : '1em'
+	});
+	ecma262.addText(ecma262Text);
+
+	let ninetiesECMA4 = new Slide('ninetiesECMA4');
+	ninetiesECMA4.style.set({
+		backgroundColor : '#09311E'
+	});
+	let ninetiesECMA4T = new Text(`
+		<div style="font-style:italic;font-size:2.2em">~2008 - ES4~</div>
+		<div>Versão abandonada :(</div>
+	`);
+	ninetiesECMA4T.style.set({
+		color : '#fff',
+		fontSize : '1em',
+		position : 'absolute',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		zIndex : '99',
+		fontWeight : 'bold'
+	});
+	ninetiesECMA4.addText(ninetiesECMA4T);
+
+	let ninetiesECMA5 = new Slide('ninetiesECMA5');
+	ninetiesECMA5.style.set({
+		backgroundColor : '#09311E'
+	});
+	let ninetiesECMA5T = new Text(`
+		<div style="font-style:italic;font-size:2.2em">~2009 - ES5~</div>
+		<div> Várias melhorias na linguagem</div>
+		<div><a href="http://kangax.github.io/es5-compat-table/">es5-compat-table</a> by @kangax</div>
+	`);
+	ninetiesECMA5T.style.set({
+		color : '#fff',
+		fontSize : '1em',
+		position : 'absolute',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		zIndex : '99',
+		fontWeight : 'bold'
+	});
+	ninetiesECMA5.addText(ninetiesECMA5T);
+
+	let ecma6 = new Slide('ecma6');
+	ecma6.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let coffee = new Slide('coffee');
+	coffee.setBackgroundImage('img/coffeescript.jpg');
+
+	let coruja = new Slide('coruja');
+	coruja.style.set({
+		backgroundColor : '#000',
+		textAlign : 'center',
+		padding : '0'
+	});
+	let imgCoruja = new Image('img/coruja.jpg');
+	imgCoruja.style.set({
+		minHeight : '100%'
+	});
+	coruja.addImage(imgCoruja);
+
+	let dart = new Slide('dart');
+	dart.setBackgroundImage('img/dart.jpg');
+
+	let gato = new Slide('gato');
+	gato.style.set({
+		backgroundColor : '#000',
+		textAlign : 'center',
+		padding : '0'
+	});
+	let imgGato = new Image('img/gato.gif');
+	imgGato.style.set({
+		minHeight : '100%'
+	});
+	gato.addImage(imgGato);
+
+	let type = new Slide('type');
+	type.setBackgroundImage('img/typescript.jpg');
+
+	let ape = new Slide('ape');
+	ape.style.set({
+		backgroundColor : '#000',
+		textAlign : 'center',
+		padding : '0'
+	});
+	let imgApe = new Image('img/ape.jpg');
+	imgApe.style.set({
+		minHeight : '100%'
+	});
+	ape.addImage(imgApe);
+
+	let fuckometer = new Slide('fuckometer');
+	fuckometer.setBackgroundImage('img/fuckometer.gif');
+
+	let ecma6T = new Text(`ES6`);
+	ecma6T.style.set({
+		fontSize : '10.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	ecma6.addText(ecma6T);
+
+	let jake = new Slide('jake');
+	jake.setBackgroundImage('img/jake.gif');
+
 	es6slider.addSlide(slide1)
 			.addSlide(me)
 			.addSlide(enthusiasm1)
@@ -167,8 +270,19 @@
 			.addSlide(historia)
 			.addSlide(brendanYoung)
 			.addSlide(nineties)
-			.addSlide(ninetiesECMA3)
 			.addSlide(ecma262)
+			.addSlide(ninetiesECMA3)
+			.addSlide(ninetiesECMA4)
+			.addSlide(ninetiesECMA5)
+			.addSlide(coffee)
+			.addSlide(coruja)
+			.addSlide(dart)
+			.addSlide(gato)
+			.addSlide(type)
+			.addSlide(ape)
+			.addSlide(fuckometer)
+			.addSlide(ecma6)
+			.addSlide(jake)
 			.addSlide(futurenow)
 			.render();
 
