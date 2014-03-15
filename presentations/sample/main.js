@@ -2,6 +2,23 @@
 
 	let es6slider = new ES6Slider('JavaScript do Futuro no Presente');
 
+	let slide1 = new Slide('Slide 1');
+	slide1.setBackgroundImage('img/backtothefuture.jpg');
+	let text1 = new Text(es6slider.name);
+	text1.style.set({
+		color : 'rgb(228, 193, 7)',
+		fontSize : '2em',
+		position : 'absolute',
+		paddingLeft : '5px',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		'-webkit-transform' : 'skewX(-16deg)',
+		'-moz-transform' : 'skewX(-16deg)',
+		'transform' : 'skewX(-16deg)',
+		zIndex : '99',
+		fontWeight : 'bold'
+	});
+	slide1.addText(text1);
+
 	let me = new Slide('Jaydson');
 	me.style.set({
 		backgroundColor : '#09311E'
@@ -28,19 +45,6 @@
 
 	let brendan = new Slide('Brendan');
 	brendan.setBackgroundImage('img/brendan.jpeg');
-
-	let slide1 = new Slide('Slide 1');
-	slide1.setBackgroundImage('img/backtothefuture.jpg');
-	let text1 = new Text(es6slider.name);
-	text1.style.set({
-		color : 'rgb(228, 193, 7)',
-		fontSize : '2em',
-		position : 'absolute',
-		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
-		zIndex : '99',
-		fontWeight : 'bold'
-	});
-	slide1.addText(text1);
 
 	let futurenow = new Slide('futurenow');
 	futurenow.setBackgroundImage('img/future-now.gif');
@@ -194,11 +198,6 @@
 	});
 	ninetiesECMA5.addText(ninetiesECMA5T);
 
-	let ecma6 = new Slide('ecma6');
-	ecma6.style.set({
-		backgroundColor : '#09311E'
-	});
-
 	let coffee = new Slide('coffee');
 	coffee.setBackgroundImage('img/coffeescript.jpg');
 
@@ -247,6 +246,11 @@
 	let fuckometer = new Slide('fuckometer');
 	fuckometer.setBackgroundImage('img/fuckometer.gif');
 
+	let ecma6 = new Slide('ecma6');
+	ecma6.style.set({
+		backgroundColor : '#09311E'
+	});
+
 	let ecma6T = new Text(`ES6`);
 	ecma6T.style.set({
 		fontSize : '10.5em',
@@ -259,6 +263,103 @@
 
 	let jake = new Slide('jake');
 	jake.setBackgroundImage('img/jake.gif');
+
+	let arrows = new Slide('arrows');
+	arrows.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let arrowsT = new Text(`Arrows`);
+	arrowsT.style.set({
+		fontSize : '8.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	arrows.addText(arrowsT);
+
+	let arrowsS = new Slide('arrows-syntax');
+	arrowsS.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let arrowsST = new Text(`=>`);
+	arrowsST.style.set({
+		fontSize : '10.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	arrowsS.addText(arrowsST);
+
+	let arrowsC = new Slide('arrows-characteristics');
+	arrowsC.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let arrowsCT = new Text(`
+		<ul style="font-size:0.8em">
+			<li>Lexical this binding</li>
+			<li>Not newable</li>
+			<li>Can’t change this</li>
+			<li>Always anonymus</li>
+		</ul>
+	`);
+	arrowsCT.style.set({
+		fontSize : '4.5em',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff',
+		fontSize : '1.2em'
+	});
+	arrowsC.addText(arrowsCT);
+
+	let arrowsExample = new Slide('arrows-example');
+	arrowsExample.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+	
+	let arrowsExampleT = new Text(`
+		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hst76yeh/"></iframe>
+	`);
+	arrowsExampleT.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	arrowsExample.addText(arrowsExampleT);
+
+	let arrowsExample1 = new Slide('arrows-example1');
+	arrowsExample1.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+	
+	let arrowsExampleT1 = new Text(`
+		<iframe width="100%" height="300" src="http://jsfiddle.net/bmBAE/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+	`);
+	arrowsExampleT1.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	arrowsExample1.addText(arrowsExampleT1);
+
+	let arrowsExample2 = new Slide('arrows-example2');
+	arrowsExample2.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+	
+	let arrowsExampleT2 = new Text(`
+		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hst6dkb7/"></iframe>
+	`);
+	arrowsExampleT2.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	arrowsExample2.addText(arrowsExampleT2);
 
 	es6slider.addSlide(slide1)
 			.addSlide(me)
@@ -283,6 +384,12 @@
 			.addSlide(fuckometer)
 			.addSlide(ecma6)
 			.addSlide(jake)
+			.addSlide(arrows)
+			.addSlide(arrowsS)
+			.addSlide(arrowsC)
+			.addSlide(arrowsExample)
+			.addSlide(arrowsExample1)
+			.addSlide(arrowsExample2)
 			.addSlide(futurenow)
 			.render();
 

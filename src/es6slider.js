@@ -24,10 +24,16 @@ class ES6Slider {
 
         if (canNext(this.currentSlide, this.slides.length - 1)) {
             document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
-            document.querySelector('#es6slide_' + (this.currentSlide + 1)).classList.remove('invisible');            
+            document.querySelector('#es6slide_' + (this.currentSlide + 1)).classList.remove('invisible');
             let stateObj = { slide : this.currentSlide };
             this.currentSlide += 1;
-            history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);            
+            history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
+        } else {
+            document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+            this.currentSlide = 0;
+            document.querySelector('#es6slide_' + (this.currentSlide)).classList.remove('invisible');
+            let stateObj = { slide : this.currentSlide };
+            history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
         }
 	}
 
@@ -36,6 +42,13 @@ class ES6Slider {
 
         if (canPrev(this.currentSlide)) {
             document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+            document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
+            let stateObj = { slide : this.currentSlide };
+            this.currentSlide -= 1;
+            history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
+        } else {
+            document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+            this.currentSlide = this.slides.length;
             document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
             let stateObj = { slide : this.currentSlide };
             this.currentSlide -= 1;

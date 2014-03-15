@@ -1386,6 +1386,16 @@ var ES6Slider = function() {
           this.currentSlide += 1;
           history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
         }
+      } else {
+        try {
+          throw undefined;
+        } catch (stateObj) {
+          document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+          this.currentSlide = 0;
+          document.querySelector('#es6slide_' + (this.currentSlide)).classList.remove('invisible');
+          stateObj = {slide: this.currentSlide};
+          history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
+        }
       }
     },
     prev: function() {
@@ -1397,6 +1407,17 @@ var ES6Slider = function() {
           throw undefined;
         } catch (stateObj) {
           document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+          document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
+          stateObj = {slide: this.currentSlide};
+          this.currentSlide -= 1;
+          history.pushState(stateObj, "Slide " + this.currentSlide, this.currentSlide);
+        }
+      } else {
+        try {
+          throw undefined;
+        } catch (stateObj) {
+          document.querySelector('#es6slide_' + this.currentSlide).classList.add('invisible');
+          this.currentSlide = this.slides.length;
           document.querySelector('#es6slide_' + (this.currentSlide - 1)).classList.remove('invisible');
           stateObj = {slide: this.currentSlide};
           this.currentSlide -= 1;
@@ -1572,6 +1593,22 @@ var Text = function() {
 }();
 ;(function() {
   var es6slider = new ES6Slider('JavaScript do Futuro no Presente');
+  var slide1 = new Slide('Slide 1');
+  slide1.setBackgroundImage('img/backtothefuture.jpg');
+  var text1 = new Text(es6slider.name);
+  text1.style.set({
+    color: 'rgb(228, 193, 7)',
+    fontSize: '2em',
+    position: 'absolute',
+    paddingLeft: '5px',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    '-webkit-transform': 'skewX(-16deg)',
+    '-moz-transform': 'skewX(-16deg)',
+    'transform': 'skewX(-16deg)',
+    zIndex: '99',
+    fontWeight: 'bold'
+  });
+  slide1.addText(text1);
   var me = new Slide('Jaydson');
   me.style.set({backgroundColor: '#09311E'});
   var bio = new Text('<span style="font-style:italic;font-size:1.3em;color:#F3EA1A">~Jaydson Gomes~ </span><br> * Entusiasta JavaScript <br> * FrontEnd Engineer no Terra <br> * Curador da BrazilJS Conf/RSJS/FrontInPoa');
@@ -1592,18 +1629,6 @@ var Text = function() {
   douglas.setBackgroundImage('img/douglas.jpg');
   var brendan = new Slide('Brendan');
   brendan.setBackgroundImage('img/brendan.jpeg');
-  var slide1 = new Slide('Slide 1');
-  slide1.setBackgroundImage('img/backtothefuture.jpg');
-  var text1 = new Text(es6slider.name);
-  text1.style.set({
-    color: 'rgb(228, 193, 7)',
-    fontSize: '2em',
-    position: 'absolute',
-    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
-    zIndex: '99',
-    fontWeight: 'bold'
-  });
-  slide1.addText(text1);
   var futurenow = new Slide('futurenow');
   futurenow.setBackgroundImage('img/future-now.gif');
   var cronograma = new Slide('Cronograma');
@@ -1683,8 +1708,6 @@ var Text = function() {
     fontWeight: 'bold'
   });
   ninetiesECMA5.addText(ninetiesECMA5T);
-  var ecma6 = new Slide('ecma6');
-  ecma6.style.set({backgroundColor: '#09311E'});
   var coffee = new Slide('coffee');
   coffee.setBackgroundImage('img/coffeescript.jpg');
   var coruja = new Slide('coruja');
@@ -1720,6 +1743,8 @@ var Text = function() {
   ape.addImage(imgApe);
   var fuckometer = new Slide('fuckometer');
   fuckometer.setBackgroundImage('img/fuckometer.gif');
+  var ecma6 = new Slide('ecma6');
+  ecma6.style.set({backgroundColor: '#09311E'});
   var ecma6T = new Text("ES6");
   ecma6T.style.set({
     fontSize: '10.5em',
@@ -1731,6 +1756,72 @@ var Text = function() {
   ecma6.addText(ecma6T);
   var jake = new Slide('jake');
   jake.setBackgroundImage('img/jake.gif');
-  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(futurenow).render();
+  var arrows = new Slide('arrows');
+  arrows.style.set({backgroundColor: '#09311E'});
+  var arrowsT = new Text("Arrows");
+  arrowsT.style.set({
+    fontSize: '8.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  arrows.addText(arrowsT);
+  var arrowsS = new Slide('arrows-syntax');
+  arrowsS.style.set({backgroundColor: '#09311E'});
+  var arrowsST = new Text("=>");
+  arrowsST.style.set({
+    fontSize: '10.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  arrowsS.addText(arrowsST);
+  var arrowsC = new Slide('arrows-characteristics');
+  arrowsC.style.set({backgroundColor: '#09311E'});
+  var arrowsCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>Lexical this binding</li>\n\t\t\t<li>Not newable</li>\n\t\t\t<li>Can’t change this</li>\n\t\t\t<li>Always anonymus</li>\n\t\t</ul>\n\t");
+  arrowsCT.style.set({
+    fontSize: '4.5em',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: '1.2em'
+  });
+  arrowsC.addText(arrowsCT);
+  var arrowsExample = new Slide('arrows-example');
+  arrowsExample.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var arrowsExampleT = new Text("\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hst76yeh/\"></iframe>\n\t");
+  arrowsExampleT.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  arrowsExample.addText(arrowsExampleT);
+  var arrowsExample1 = new Slide('arrows-example1');
+  arrowsExample1.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var arrowsExampleT1 = new Text("\n\t\t<iframe width=\"100%\" height=\"300\" src=\"http://jsfiddle.net/bmBAE/embedded/\" allowfullscreen=\"allowfullscreen\" frameborder=\"0\"></iframe>\n\t");
+  arrowsExampleT1.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  arrowsExample1.addText(arrowsExampleT1);
+  var arrowsExample2 = new Slide('arrows-example2');
+  arrowsExample2.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var arrowsExampleT2 = new Text("\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hst6dkb7/\"></iframe>\n\t");
+  arrowsExampleT2.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  arrowsExample2.addText(arrowsExampleT2);
+  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(arrows).addSlide(arrowsS).addSlide(arrowsC).addSlide(arrowsExample).addSlide(arrowsExample1).addSlide(arrowsExample2).addSlide(futurenow).render();
   console.log(es6slider);
 }());
