@@ -1794,7 +1794,7 @@ var Text = function() {
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var arrowsExampleT = new Text("\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hst76yeh/\"></iframe>\n\t");
+  var arrowsExampleT = new Text("\n\t\t<h1>Arrows - Exemplo 1</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hst76yeh/\"></iframe>\n\t");
   arrowsExampleT.style.set({
     width: '100%',
     height: '100%'
@@ -1805,7 +1805,7 @@ var Text = function() {
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var arrowsExampleT1 = new Text("\n\t\t<iframe width=\"100%\" height=\"300\" src=\"http://jsfiddle.net/bmBAE/embedded/\" allowfullscreen=\"allowfullscreen\" frameborder=\"0\"></iframe>\n\t");
+  var arrowsExampleT1 = new Text("\n\t\t<h1>Arrows - Exemplo 2</h1>\n\t\t<iframe width=\"100%\" height=\"300\" src=\"http://jsfiddle.net/bmBAE/embedded/\" allowfullscreen=\"allowfullscreen\" frameborder=\"0\"></iframe>\n\t");
   arrowsExampleT1.style.set({
     width: '100%',
     height: '100%'
@@ -1816,12 +1816,89 @@ var Text = function() {
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var arrowsExampleT2 = new Text("\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hst6dkb7/\"></iframe>\n\t");
+  var arrowsExampleT2 = new Text("\n\t\t<h1>Arrows - Exemplo 3</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hst6dkb7/\"></iframe>\n\t");
   arrowsExampleT2.style.set({
     width: '100%',
     height: '100%'
   });
   arrowsExample2.addText(arrowsExampleT2);
-  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(arrows).addSlide(arrowsS).addSlide(arrowsC).addSlide(arrowsExample).addSlide(arrowsExample1).addSlide(arrowsExample2).addSlide(futurenow).render();
+  var classes = new Slide('classes');
+  classes.style.set({backgroundColor: '#09311E'});
+  var classesT = new Text("Classes");
+  classesT.style.set({
+    fontSize: '6.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  classes.addText(classesT);
+  var classesC = new Slide('classes-characteristics');
+  classesC.style.set({backgroundColor: '#09311E'});
+  var classesCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>OO clássica</li>\n\t\t\t<li>super call</li>\n\t\t\t<li>static methods</li>\n\t\t\t<li>constructors</li>\n\t\t</ul>\n\t");
+  classesCT.style.set({
+    fontSize: '4.5em',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: '1.2em'
+  });
+  classesC.addText(classesCT);
+  var classesExample = new Slide('classes-example');
+  classesExample.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var classesExampleT = new Text("\n\t\t<h1>Classes - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hsv688sz/\"></iframe>\n\t");
+  classesExampleT.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  classesExample.addText(classesExampleT);
+  var classesExample1 = new Slide('classes-example1');
+  classesExample1.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var classesExampleT1 = new Text("\n\t\t<h1>Classes - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" src=\"http://jsfiddle.net/AAbm8/embedded/\" allowfullscreen=\"allowfullscreen\" frameborder=\"0\"></iframe>\n\t");
+  classesExampleT1.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  classesExample1.addText(classesExampleT1);
+  var tplstrings = new Slide('template-strings');
+  tplstrings.style.set({backgroundColor: '#09311E'});
+  var tplstringsT = new Text("Template Strings");
+  tplstringsT.style.set({
+    fontSize: '3.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  tplstrings.addText(tplstringsT);
+  var tplStringsC = new Slide('template-strings-characteristics');
+  tplStringsC.style.set({backgroundColor: '#09311E'});
+  var tplStringsCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>Multiline strings</li>\n\t\t\t<li>Basic string formatting</li>\n\t\t\t<li>HTML escaping</li>\n\t\t\t<li>Localization of strings</li>\n\t\t</ul>\n\t");
+  tplStringsCT.style.set({
+    fontSize: '4.5em',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: '1.2em'
+  });
+  tplStringsC.addText(tplStringsCT);
+  var tplStringsExample = new Slide('template-strings-example');
+  tplStringsExample.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var tplStringsExampleT = new Text("\n\t\t<h1>Template strings - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hsv8wrep/\"></iframe>\n\t");
+  tplStringsExampleT.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  tplStringsExample.addText(tplStringsExampleT);
+  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(arrows).addSlide(arrowsS).addSlide(arrowsC).addSlide(arrowsExample).addSlide(arrowsExample1).addSlide(arrowsExample2).addSlide(classes).addSlide(classesC).addSlide(classesExample).addSlide(classesExample1).addSlide(tplstrings).addSlide(tplStringsC).addSlide(tplStringsExample).addSlide(futurenow).render();
   console.log(es6slider);
 }());

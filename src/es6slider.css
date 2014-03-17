@@ -6,6 +6,12 @@ html, body, #es6slider {
     font-family: 'Armata';
 }
 
+h1 {
+	font-size: 1em;
+	color: #fff;
+	padding-left: 20px;
+}
+
 .es6slider {
 
 }

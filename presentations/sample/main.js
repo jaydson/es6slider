@@ -323,6 +323,7 @@
 	});
 	
 	let arrowsExampleT = new Text(`
+		<h1>Arrows - Exemplo 1</h1>
 		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hst76yeh/"></iframe>
 	`);
 	arrowsExampleT.style.set({
@@ -338,6 +339,7 @@
 	});
 	
 	let arrowsExampleT1 = new Text(`
+		<h1>Arrows - Exemplo 2</h1>
 		<iframe width="100%" height="300" src="http://jsfiddle.net/bmBAE/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 	`);
 	arrowsExampleT1.style.set({
@@ -353,6 +355,7 @@
 	});
 	
 	let arrowsExampleT2 = new Text(`
+		<h1>Arrows - Exemplo 3</h1>
 		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hst6dkb7/"></iframe>
 	`);
 	arrowsExampleT2.style.set({
@@ -360,6 +363,128 @@
 		height : '100%'		
 	});
 	arrowsExample2.addText(arrowsExampleT2);
+
+	let classes = new Slide('classes');
+	classes.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let classesT = new Text(`Classes`);
+	classesT.style.set({
+		fontSize : '6.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	classes.addText(classesT);
+
+	let classesC = new Slide('classes-characteristics');
+	classesC.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let classesCT = new Text(`
+		<ul style="font-size:0.8em">
+			<li>OO clássica</li>
+			<li>super call</li>
+			<li>static methods</li>
+			<li>constructors</li>
+		</ul>
+	`);
+	classesCT.style.set({
+		fontSize : '4.5em',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff',
+		fontSize : '1.2em'
+	});
+	classesC.addText(classesCT);
+
+	let classesExample = new Slide('classes-example');
+	classesExample.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+	
+	let classesExampleT = new Text(`
+		<h1>Classes - Exemplo</h1>
+		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hsv688sz/"></iframe>
+	`);
+	classesExampleT.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	classesExample.addText(classesExampleT);
+
+	let classesExample1 = new Slide('classes-example1');
+	classesExample1.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+	
+	let classesExampleT1 = new Text(`
+		<h1>Classes - Exemplo</h1>
+		<iframe width="100%" height="300" src="http://jsfiddle.net/AAbm8/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+	`);
+	classesExampleT1.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	classesExample1.addText(classesExampleT1);
+
+	let tplstrings = new Slide('template-strings');
+	tplstrings.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let tplstringsT = new Text(`Template Strings`);
+	tplstringsT.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	tplstrings.addText(tplstringsT);
+
+	let tplStringsC = new Slide('template-strings-characteristics');
+	tplStringsC.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let tplStringsCT = new Text(`
+		<ul style="font-size:0.8em">
+			<li>Multiline strings</li>
+			<li>Basic string formatting</li>
+			<li>HTML escaping</li>
+			<li>Localization of strings</li>
+		</ul>
+	`);
+	tplStringsCT.style.set({
+		fontSize : '4.5em',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff',
+		fontSize : '1.2em'
+	});
+	tplStringsC.addText(tplStringsCT);
+
+	let tplStringsExample = new Slide('template-strings-example');
+	tplStringsExample.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+	
+	let tplStringsExampleT = new Text(`
+		<h1>Template strings - Exemplo</h1>
+		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hsv8wrep/"></iframe>
+	`);
+	tplStringsExampleT.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	tplStringsExample.addText(tplStringsExampleT);
 
 	es6slider.addSlide(slide1)
 			.addSlide(me)
@@ -390,6 +515,13 @@
 			.addSlide(arrowsExample)
 			.addSlide(arrowsExample1)
 			.addSlide(arrowsExample2)
+			.addSlide(classes)
+			.addSlide(classesC)
+			.addSlide(classesExample)
+			.addSlide(classesExample1)
+			.addSlide(tplstrings)
+			.addSlide(tplStringsC)
+			.addSlide(tplStringsExample)
 			.addSlide(futurenow)
 			.render();
 
