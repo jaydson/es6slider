@@ -2077,6 +2077,27 @@ var Keyboard = function() {
   caseSlide.style.set({backgroundColor: '#09311E'});
   var traceur = new Slide('traceur');
   traceur.setBackgroundImage('img/tc.png');
+  var traceurLink = new Text("\n\t\t<a href=\"https://github.com/google/traceur-compiler\">https://github.com/google/traceur-compiler</a>\n\t");
+  traceurLink.style.set({
+    position: 'absolute',
+    zIndex: '999',
+    fontSize: '0.8em',
+    marginLeft: '70px',
+    textAlign: 'center',
+    marginTop: '25px'
+  });
+  traceur.addText(traceurLink);
+  var es6table = new Slide('es6table');
+  es6table.style.set({backgroundColor: '#09311E'});
+  var es6tableT = new Text("\n\t\t<h1>Tabela ES6</h1>\n\t\t<a href=\"http://kangax.github.io/es5-compat-table/es6/\">http://kangax.github.io/es5-compat-table/es6/</a>\n\t");
+  es6tableT.style.set({
+    fontSize: '1em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  es6table.addText(es6tableT);
   var caseSlideT = new Text("Case");
   caseSlideT.style.set({
     fontSize: '3.5em',
@@ -2086,6 +2107,17 @@ var Keyboard = function() {
     color: '#fff'
   });
   caseSlide.addText(caseSlideT);
-  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(arrows).addSlide(arrowsS).addSlide(arrowsC).addSlide(arrowsExample).addSlide(arrowsExample1).addSlide(arrowsExample2).addSlide(classes).addSlide(classesC).addSlide(classesExample).addSlide(classesExample1).addSlide(tplstrings).addSlide(tplStringsC).addSlide(tplStringsExample).addSlide(default_rest_spread).addSlide(default_rest_spreadC).addSlide(default_rest_spreadExample).addSlide(block).addSlide(blockC).addSlide(blockExample).addSlide(moduleSlide).addSlide(viva).addSlide(moduleExample).addSlide(promiseImage).addSlide(promiseSlide).addSlide(promiseSlideC).addSlide(promiseExample).addSlide(how).addSlide(futurenow).addSlide(traceur).addSlide(caseSlide).render();
+  var end = new Slide('end');
+  end.style.set({backgroundColor: '#09311E'});
+  var endT = new Text("\n\t\t<a href=\"https://github.com/jaydson/js-future-in-the-present\">https://github.com/jaydson/js-future-in-the-present</a><br>\n\t\t<a href=\"https://github.com/jaydson/es6slider\">https://github.com/jaydson/es6slider</a>\n\t");
+  endT.style.set({
+    fontSize: '1em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  end.addText(endT);
+  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(arrows).addSlide(arrowsS).addSlide(arrowsC).addSlide(arrowsExample).addSlide(arrowsExample1).addSlide(arrowsExample2).addSlide(classes).addSlide(classesC).addSlide(classesExample).addSlide(classesExample1).addSlide(tplstrings).addSlide(tplStringsC).addSlide(tplStringsExample).addSlide(default_rest_spread).addSlide(default_rest_spreadC).addSlide(default_rest_spreadExample).addSlide(block).addSlide(blockC).addSlide(blockExample).addSlide(moduleSlide).addSlide(viva).addSlide(moduleExample).addSlide(promiseImage).addSlide(promiseSlide).addSlide(promiseSlideC).addSlide(promiseExample).addSlide(how).addSlide(futurenow).addSlide(traceur).addSlide(es6table).addSlide(caseSlide).addSlide(end).render();
   console.log(es6slider);
 }());

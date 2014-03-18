@@ -728,6 +728,37 @@
 	let traceur = new Slide('traceur');
 	traceur.setBackgroundImage('img/tc.png');
 
+	let traceurLink = new Text(`
+		<a href="https://github.com/google/traceur-compiler">https://github.com/google/traceur-compiler</a>
+	`);
+	traceurLink.style.set({
+		position: 'absolute',
+		zIndex: '999',
+		fontSize: '0.8em',
+		marginLeft: '70px',
+		textAlign: 'center',
+		marginTop: '25px'
+	});
+	traceur.addText(traceurLink);
+
+	let es6table = new Slide('es6table');
+	es6table.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let es6tableT = new Text(`
+		<h1>Tabela ES6</h1>
+		<a href="http://kangax.github.io/es5-compat-table/es6/">http://kangax.github.io/es5-compat-table/es6/</a>
+	`);
+	es6tableT.style.set({
+		fontSize : '1em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	es6table.addText(es6tableT);
+
 	let caseSlideT = new Text(`Case`);
 	caseSlideT.style.set({
 		fontSize : '3.5em',
@@ -744,11 +775,11 @@
 	});
 
 	let endT = new Text(`
-		<a href=""></a><vr>
-		<a href=""></a>
+		<a href="https://github.com/jaydson/js-future-in-the-present">https://github.com/jaydson/js-future-in-the-present</a><br>
+		<a href="https://github.com/jaydson/es6slider">https://github.com/jaydson/es6slider</a>
 	`);
 	endT.style.set({
-		fontSize : '3.5em',
+		fontSize : '1em',
 		textAlign : 'center',
 		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
 		fontWeight : 'bold',
@@ -809,6 +840,7 @@
 			.addSlide(how)
 			.addSlide(futurenow)
 			.addSlide(traceur)
+			.addSlide(es6table)
 			.addSlide(caseSlide)
 			.addSlide(end)
 			.render();
