@@ -1470,17 +1470,13 @@ var ES6Slider = function() {
         mainDOMContainer.appendChild(DOMElementSlide);
         var stateObj = {slide: 0};
       });
-      document.addEventListener('keydown', function(event) {
-        var _evt = event || window.event;
-        switch (_evt.keyCode) {
-          case 37:
-            _this.prev();
-            break;
-          case 39:
-            _this.next();
-            break;
-        }
-      });
+      var keyboard = new Keyboard();
+      keyboard.on(37, (function() {
+        return _this.prev();
+      }));
+      keyboard.on(39, (function() {
+        return _this.next();
+      }));
       window.addEventListener('popstate', function(event) {
         if (event.state) {
           console.log(event.state);
@@ -1591,6 +1587,23 @@ var Text = function() {
     }}, {});
   return $Text;
 }();
+var Keyboard = function() {
+  'use strict';
+  var $Keyboard = ($__createClassNoExtends)({
+    constructor: function() {
+      return this;
+    },
+    on: function(key, fn) {
+      document.addEventListener('keyup', function(event) {
+        var _evt = event || window.event;
+        if (_evt.keyCode === key) {
+          fn.call(null);
+        }
+      });
+    }
+  }, {});
+  return $Keyboard;
+}();
 ;(function() {
   var es6slider = new ES6Slider('JavaScript do Futuro no Presente');
   var slide1 = new Slide('Slide 1');
@@ -1633,8 +1646,8 @@ var Text = function() {
   futurenow.setBackgroundImage('img/future-now.gif');
   var cronograma = new Slide('Cronograma');
   cronograma.style.set({backgroundColor: '#09311E'});
-  var list = ['História', 'Arrows functions', 'Classes', 'Template Strings', 'default/rest/spread params', 'let + const', 'iterators + for..of', 'generators', 'comprehensions', 'modules', 'map + set + weakmap + weakset', 'proxies', 'symbols', 'promises', 'math + number + string + object APIs'];
-  var textCronograma = new Text(("<span style=\"font-style:italic;font-size:1.4em\">~Cronograma~ </span><br>\n\t\t \t\t\t\t\t\t\t<ul style=\"font-size:0.8em\">\n\t\t \t\t\t\t\t\t\t\t<li>" + list[0] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[1] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[2] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[3] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[4] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[5] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[6] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[7] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[8] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[9] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[10] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[11] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[12] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[13] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[14] + "</li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t  "));
+  var list = ['História', 'Arrows functions', 'Classes', 'Template Strings', 'default/rest/spread params', 'let + const', 'modules', 'promises'];
+  var textCronograma = new Text(("<span style=\"font-style:italic;font-size:1.4em\">~Cronograma~ </span><br>\n\t\t \t\t\t\t\t\t\t<ul style=\"font-size:0.8em\">\n\t\t \t\t\t\t\t\t\t\t<li>" + list[0] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[1] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[2] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[3] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[4] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[5] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[6] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[7] + "</li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t  "));
   textCronograma.style.set({
     color: '#fff',
     fontSize: '0.6em',
@@ -1698,7 +1711,7 @@ var Text = function() {
   ninetiesECMA4.addText(ninetiesECMA4T);
   var ninetiesECMA5 = new Slide('ninetiesECMA5');
   ninetiesECMA5.style.set({backgroundColor: '#09311E'});
-  var ninetiesECMA5T = new Text("\n\t\t<div style=\"font-style:italic;font-size:2.2em\">~2009 - ES5~</div>\n\t\t<div> Várias melhorias na linguagem</div>\n\t\t<div><a href=\"http://kangax.github.io/es5-compat-table/\">es5-compat-table</a> by @kangax</div>\n\t");
+  var ninetiesECMA5T = new Text("\n\t\t<div style=\"font-style:italic;font-size:2.2em\">~2009 - ES5~</div>\n\t\t<div> Várias melhorias na linguagem</div>\n\t\t<div><a target=\"_blank\" href=\"http://kangax.github.io/es5-compat-table/\">es5-compat-table</a> by @kangax</div>\n\t");
   ninetiesECMA5T.style.set({
     color: '#fff',
     fontSize: '1em',
@@ -1760,7 +1773,7 @@ var Text = function() {
   arrows.style.set({backgroundColor: '#09311E'});
   var arrowsT = new Text("Arrows");
   arrowsT.style.set({
-    fontSize: '8.5em',
+    fontSize: '6.5em',
     textAlign: 'center',
     textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
     fontWeight: 'bold',
@@ -1826,7 +1839,7 @@ var Text = function() {
   classes.style.set({backgroundColor: '#09311E'});
   var classesT = new Text("Classes");
   classesT.style.set({
-    fontSize: '6.5em',
+    fontSize: '5.5em',
     textAlign: 'center',
     textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
     fontWeight: 'bold',
@@ -1899,6 +1912,180 @@ var Text = function() {
     height: '100%'
   });
   tplStringsExample.addText(tplStringsExampleT);
-  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(arrows).addSlide(arrowsS).addSlide(arrowsC).addSlide(arrowsExample).addSlide(arrowsExample1).addSlide(arrowsExample2).addSlide(classes).addSlide(classesC).addSlide(classesExample).addSlide(classesExample1).addSlide(tplstrings).addSlide(tplStringsC).addSlide(tplStringsExample).addSlide(futurenow).render();
+  var default_rest_spread = new Slide('Paramaters');
+  default_rest_spread.style.set({backgroundColor: '#09311E'});
+  var default_rest_spreadT = new Text("Paramaters");
+  default_rest_spreadT.style.set({
+    fontSize: '3.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  default_rest_spread.addText(default_rest_spreadT);
+  var default_rest_spreadC = new Slide('default_rest_spread_characteristics');
+  default_rest_spreadC.style.set({backgroundColor: '#09311E'});
+  var default_rest_spreadCCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>Rest</li>\n\t\t\t<li>Spread</li>\n\t\t\t<li>Default</li>\n\t\t</ul>\n\t");
+  default_rest_spreadCCT.style.set({
+    fontSize: '4.5em',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: '1.2em'
+  });
+  default_rest_spreadC.addText(default_rest_spreadCCT);
+  var default_rest_spreadExample = new Slide('default_rest_spreadExample-example');
+  default_rest_spreadExample.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var default_rest_spreadExampleT = new Text("\n\t\t<h1>Rest/Spread/Default - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hsw6mqvi/\"></iframe>\n\t");
+  default_rest_spreadExampleT.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  default_rest_spreadExample.addText(default_rest_spreadExampleT);
+  var block = new Slide('block-scope');
+  block.style.set({backgroundColor: '#09311E'});
+  var blockT = new Text("Block Scope");
+  blockT.style.set({
+    fontSize: '3.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  block.addText(blockT);
+  var blockC = new Slide('block_characteristics');
+  blockC.style.set({backgroundColor: '#09311E'});
+  var blockCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>let</li>\n\t\t\t<li>const</li>\n\t\t</ul>\n\t");
+  blockCT.style.set({
+    fontSize: '4.5em',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: '1.2em'
+  });
+  blockC.addText(blockCT);
+  var blockExample = new Slide('block-example');
+  blockExample.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var blockExampleT = new Text("\n\t\t<h1>Block Scope - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hswm5cid/\"></iframe>\n\t");
+  blockExampleT.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  blockExample.addText(blockExampleT);
+  var moduleSlide = new Slide('module');
+  moduleSlide.style.set({backgroundColor: '#09311E'});
+  var moduleSlideT = new Text("Module");
+  moduleSlideT.style.set({
+    fontSize: '3.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  moduleSlide.addText(moduleSlideT);
+  var moduleSlideC = new Slide('module_characteristics');
+  moduleSlideC.style.set({backgroundColor: '#09311E'});
+  var moduleSlideCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t\n\t\t</ul>\n\t");
+  moduleSlideCT.style.set({
+    fontSize: '4.5em',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: '1.2em'
+  });
+  moduleSlideC.addText(moduleSlideCT);
+  var viva = new Slide('viva');
+  ape.style.set({
+    backgroundColor: '#000',
+    textAlign: 'center',
+    padding: '0'
+  });
+  var imgViva = new Image('img/viva.jpg');
+  imgViva.style.set({minHeight: '100%'});
+  viva.addImage(imgViva);
+  var moduleExample = new Slide('module-example');
+  moduleExample.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var moduleExampleT = new Text("\n\t\t<h1>Module - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hswmt17n/\"></iframe>\n\t");
+  moduleExampleT.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  moduleExample.addText(moduleExampleT);
+  var promiseImage = new Slide('promise-image');
+  promiseImage.style.set({
+    backgroundColor: '#000',
+    textAlign: 'center',
+    padding: '0'
+  });
+  var promiseImageSrc = new Image('img/promise.jpg');
+  promiseImageSrc.style.set({minHeight: '100%'});
+  promiseImage.addImage(promiseImageSrc);
+  var promiseSlide = new Slide('promise');
+  promiseSlide.style.set({backgroundColor: '#09311E'});
+  var promiseSlideT = new Text("Promises");
+  promiseSlideT.style.set({
+    fontSize: '3.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  promiseSlide.addText(promiseSlideT);
+  var promiseSlideC = new Slide('promises_characteristics');
+  promiseSlideC.style.set({backgroundColor: '#09311E'});
+  var promiseSlideCT = new Text("\n\t\t<ul style=\"font-size:0.6em\">\n\t\t\t<li>Uma promise representa um valor não necessariamente conhecido no seu tempo de criação</li>\n\t\t\t<li>Promises permitem associar handlers de sucesso ou erro de uma ação assíncrona</li>\n\t\t\t<li>Isso permite que métodos assíncronos retornem valores como métodos ~síncronos~</li>\n\t\t\t<li>Ao invés do valor final, o método assíncrono retorna uma promessa de ter um valor em algum momento no futuro</li>\n\t\t</ul>\n\t");
+  promiseSlideCT.style.set({
+    fontSize: '4.5em',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: '1.2em'
+  });
+  promiseSlideC.addText(promiseSlideCT);
+  var promiseExample = new Slide('promise-example');
+  promiseExample.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var promiseExampleT = new Text("\n\t\t<h1>Promises - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hswp4eb2/\"></iframe>\n\t");
+  promiseExampleT.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  promiseExample.addText(promiseExampleT);
+  var how = new Slide('how');
+  how.style.set({backgroundColor: '#09311E'});
+  var howT = new Text("Como usar hoje?");
+  howT.style.set({
+    fontSize: '3.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  how.addText(howT);
+  var caseSlide = new Slide('case');
+  caseSlide.style.set({backgroundColor: '#09311E'});
+  var traceur = new Slide('traceur');
+  traceur.setBackgroundImage('img/tc.png');
+  var caseSlideT = new Text("Case");
+  caseSlideT.style.set({
+    fontSize: '3.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  caseSlide.addText(caseSlideT);
+  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(arrows).addSlide(arrowsS).addSlide(arrowsC).addSlide(arrowsExample).addSlide(arrowsExample1).addSlide(arrowsExample2).addSlide(classes).addSlide(classesC).addSlide(classesExample).addSlide(classesExample1).addSlide(tplstrings).addSlide(tplStringsC).addSlide(tplStringsExample).addSlide(default_rest_spread).addSlide(default_rest_spreadC).addSlide(default_rest_spreadExample).addSlide(block).addSlide(blockC).addSlide(blockExample).addSlide(moduleSlide).addSlide(viva).addSlide(moduleExample).addSlide(promiseImage).addSlide(promiseSlide).addSlide(promiseSlideC).addSlide(promiseExample).addSlide(how).addSlide(futurenow).addSlide(traceur).addSlide(caseSlide).render();
   console.log(es6slider);
 }());

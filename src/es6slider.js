@@ -107,18 +107,11 @@ class ES6Slider {
             let stateObj = { slide : 0 };
             //history.replaceState(stateObj, "Slide " + 0, 0);
         });
-
-        document.addEventListener('keydown', function (event) {
-            var _evt = event || window.event;
-            switch (_evt.keyCode) {
-                case 37:
-                    _this.prev();
-                    break;
-                case 39:
-                    _this.next();
-                    break;
-            }
-        });
+    
+        /* Keyboard control */
+        let keyboard = new Keyboard();
+        keyboard.on(37, () => _this.prev()); /* ES6 arrow functions */
+        keyboard.on(39, () => _this.next()); /* ES6 arrow functions */
 
         window.addEventListener('popstate', function (event) {
             if (event.state) {
@@ -228,5 +221,21 @@ class Text {
         this.str = str;
         this.style = new Style();
         return this;
+    }
+}
+
+/* ES6 Classes */
+class Keyboard {
+    constructor() {
+        return this;
+    }
+
+    on(key, fn) {
+        document.addEventListener('keyup', function (event) {
+            let _evt = event || window.event;
+            if (_evt.keyCode === key) {
+                fn.call(null);
+            }
+        });
     }
 }

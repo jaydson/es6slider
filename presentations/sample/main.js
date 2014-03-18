@@ -59,15 +59,8 @@
 				'Template Strings',
 				'default/rest/spread params',
 				'let + const',
-				'iterators + for..of',
-				'generators',
-				'comprehensions',
 				'modules',
-				'map + set + weakmap + weakset',
-				'proxies',
-				'symbols',
-				'promises',
-				'math + number + string + object APIs'];
+				'promises'];
 
 	/* ES6 Template strings (multiline)*/
 	let textCronograma = new Text(`<span style="font-style:italic;font-size:1.4em">~Cronograma~ </span><br>
@@ -80,13 +73,6 @@
 										<li>${list[5]}</li>
 										<li>${list[6]}</li>
 										<li>${list[7]}</li>
-										<li>${list[8]}</li>
-										<li>${list[9]}</li>
-										<li>${list[10]}</li>
-										<li>${list[11]}</li>
-										<li>${list[12]}</li>
-										<li>${list[13]}</li>
-										<li>${list[14]}</li>
 									</ul>
 								  `);
 	textCronograma.style.set({
@@ -186,7 +172,7 @@
 	let ninetiesECMA5T = new Text(`
 		<div style="font-style:italic;font-size:2.2em">~2009 - ES5~</div>
 		<div> Várias melhorias na linguagem</div>
-		<div><a href="http://kangax.github.io/es5-compat-table/">es5-compat-table</a> by @kangax</div>
+		<div><a target="_blank" href="http://kangax.github.io/es5-compat-table/">es5-compat-table</a> by @kangax</div>
 	`);
 	ninetiesECMA5T.style.set({
 		color : '#fff',
@@ -271,7 +257,7 @@
 	
 	let arrowsT = new Text(`Arrows`);
 	arrowsT.style.set({
-		fontSize : '8.5em',
+		fontSize : '6.5em',
 		textAlign : 'center',
 		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
 		fontWeight : 'bold',
@@ -371,7 +357,7 @@
 	
 	let classesT = new Text(`Classes`);
 	classesT.style.set({
-		fontSize : '6.5em',
+		fontSize : '5.5em',
 		textAlign : 'center',
 		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
 		fontWeight : 'bold',
@@ -486,6 +472,291 @@
 	});
 	tplStringsExample.addText(tplStringsExampleT);
 
+	let default_rest_spread = new Slide('Paramaters');
+	default_rest_spread.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let default_rest_spreadT = new Text(`Paramaters`);
+	default_rest_spreadT.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	default_rest_spread.addText(default_rest_spreadT);
+
+	let default_rest_spreadC = new Slide('default_rest_spread_characteristics');
+	default_rest_spreadC.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let default_rest_spreadCCT = new Text(`
+		<ul style="font-size:0.8em">
+			<li>Rest</li>
+			<li>Spread</li>
+			<li>Default</li>
+		</ul>
+	`);
+	default_rest_spreadCCT.style.set({
+		fontSize : '4.5em',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff',
+		fontSize : '1.2em'
+	});
+	default_rest_spreadC.addText(default_rest_spreadCCT);
+
+	let default_rest_spreadExample = new Slide('default_rest_spreadExample-example');
+	default_rest_spreadExample.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+	
+	let default_rest_spreadExampleT = new Text(`
+		<h1>Rest/Spread/Default - Exemplo</h1>
+		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hsw6mqvi/"></iframe>
+	`);
+	default_rest_spreadExampleT.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	default_rest_spreadExample.addText(default_rest_spreadExampleT);
+
+	let block = new Slide('block-scope');
+	block.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let blockT = new Text(`Block Scope`);
+	blockT.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	block.addText(blockT);
+
+	let blockC = new Slide('block_characteristics');
+	blockC.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let blockCT = new Text(`
+		<ul style="font-size:0.8em">
+			<li>let</li>
+			<li>const</li>
+		</ul>
+	`);
+	blockCT.style.set({
+		fontSize : '4.5em',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff',
+		fontSize : '1.2em'
+	});
+	blockC.addText(blockCT);
+
+	let blockExample = new Slide('block-example');
+	blockExample.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+
+	let blockExampleT = new Text(`
+		<h1>Block Scope - Exemplo</h1>
+		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hswm5cid/"></iframe>
+	`);
+	blockExampleT.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	blockExample.addText(blockExampleT);
+
+	let moduleSlide = new Slide('module');
+	moduleSlide.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let moduleSlideT = new Text(`Module`);
+	moduleSlideT.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	moduleSlide.addText(moduleSlideT);
+
+	let moduleSlideC = new Slide('module_characteristics');
+	moduleSlideC.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let moduleSlideCT = new Text(`
+		<ul style="font-size:0.8em">
+			
+		</ul>
+	`);
+	moduleSlideCT.style.set({
+		fontSize : '4.5em',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff',
+		fontSize : '1.2em'
+	});
+	moduleSlideC.addText(moduleSlideCT);
+
+	let viva = new Slide('viva');
+	ape.style.set({
+		backgroundColor : '#000',
+		textAlign : 'center',
+		padding : '0'
+	});
+
+	let imgViva = new Image('img/viva.jpg');
+	imgViva.style.set({
+		minHeight : '100%'
+	});
+	viva.addImage(imgViva);
+
+	let moduleExample = new Slide('module-example');
+	moduleExample.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+
+	let moduleExampleT = new Text(`
+		<h1>Module - Exemplo</h1>
+		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hswmt17n/"></iframe>
+	`);
+	moduleExampleT.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	moduleExample.addText(moduleExampleT);
+
+	let promiseImage = new Slide('promise-image');
+	promiseImage.style.set({
+		backgroundColor : '#000',
+		textAlign : 'center',
+		padding : '0'
+	});
+	
+	let promiseImageSrc = new Image('img/promise.jpg');
+	promiseImageSrc.style.set({
+		minHeight : '100%'
+	});
+	promiseImage.addImage(promiseImageSrc);
+
+
+	let promiseSlide = new Slide('promise');
+	promiseSlide.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let promiseSlideT = new Text(`Promises`);
+	promiseSlideT.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	promiseSlide.addText(promiseSlideT);
+
+	let promiseSlideC = new Slide('promises_characteristics');
+	promiseSlideC.style.set({
+		backgroundColor : '#09311E'
+	});
+	
+	let promiseSlideCT = new Text(`
+		<ul style="font-size:0.6em">
+			<li>Uma promise representa um valor não necessariamente conhecido no seu tempo de criação</li>
+			<li>Promises permitem associar handlers de sucesso ou erro de uma ação assíncrona</li>
+			<li>Isso permite que métodos assíncronos retornem valores como métodos ~síncronos~</li>
+			<li>Ao invés do valor final, o método assíncrono retorna uma promessa de ter um valor em algum momento no futuro</li>
+		</ul>
+	`);
+	promiseSlideCT.style.set({
+		fontSize : '4.5em',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff',
+		fontSize : '1.2em'
+	});
+	promiseSlideC.addText(promiseSlideCT);
+
+	let promiseExample = new Slide('promise-example');
+	promiseExample.style.set({
+		backgroundColor : '#09311E',
+		padding : '0'
+	});
+
+	let promiseExampleT = new Text(`
+		<h1>Promises - Exemplo</h1>
+		<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/hswp4eb2/"></iframe>
+	`);
+	promiseExampleT.style.set({
+		width : '100%',
+		height : '100%'		
+	});
+	promiseExample.addText(promiseExampleT);
+
+	let how = new Slide('how');
+	how.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let howT = new Text(`Como usar hoje?`);
+	howT.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	how.addText(howT);
+
+	let caseSlide = new Slide('case');
+	caseSlide.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let traceur = new Slide('traceur');
+	traceur.setBackgroundImage('img/tc.png');
+
+	let caseSlideT = new Text(`Case`);
+	caseSlideT.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	caseSlide.addText(caseSlideT);
+
+	let end = new Slide('end');
+	end.style.set({
+		backgroundColor : '#09311E'
+	});
+
+	let endT = new Text(`
+		<a href=""></a><vr>
+		<a href=""></a>
+	`);
+	endT.style.set({
+		fontSize : '3.5em',
+		textAlign : 'center',
+		textShadow : '4px 4px 2px rgba(10, 10, 10, 1)',
+		fontWeight : 'bold',
+		color : '#fff'
+	});
+	end.addText(endT);
+
+
 	es6slider.addSlide(slide1)
 			.addSlide(me)
 			.addSlide(enthusiasm1)
@@ -522,7 +793,24 @@
 			.addSlide(tplstrings)
 			.addSlide(tplStringsC)
 			.addSlide(tplStringsExample)
+			.addSlide(default_rest_spread)
+			.addSlide(default_rest_spreadC)
+			.addSlide(default_rest_spreadExample)
+			.addSlide(block)
+			.addSlide(blockC)
+			.addSlide(blockExample)
+			.addSlide(moduleSlide)
+			.addSlide(viva)
+			.addSlide(moduleExample)
+			.addSlide(promiseImage)
+			.addSlide(promiseSlide)
+			.addSlide(promiseSlideC)		
+			.addSlide(promiseExample)
+			.addSlide(how)
 			.addSlide(futurenow)
+			.addSlide(traceur)
+			.addSlide(caseSlide)
+			.addSlide(end)
 			.render();
 
 	console.log(es6slider);
