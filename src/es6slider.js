@@ -125,11 +125,11 @@ class ES6Slider {
 /* ES6 Classes */
 class Style {
 
-    constructor() { /* ES6 construcor | ES6 default paramaters */
+    constructor() {
         this.style = {};
     }
 
-    set (style) { /* ES6 default paramaters */
+    set (style) {
         if (typeof style === 'object') {
             Object.assign(this.style, style); /* ES6 Object.assign merging objects */
         } else if (arguments.length === 2) {

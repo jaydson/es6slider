@@ -1606,14 +1606,14 @@ var Keyboard = function() {
 }();
 ;(function() {
   var es6slider = new ES6Slider('JavaScript do Futuro no Presente');
-  var slide1 = new Slide('Slide 1');
+  var slide1 = new RegularSlide('Slide 1');
   slide1.setBackgroundImage('img/backtothefuture.jpg');
   var text1 = new Text(es6slider.name);
   text1.style.set({
     color: 'rgb(228, 193, 7)',
     fontSize: '2em',
     position: 'absolute',
-    paddingLeft: '5px',
+    paddingLeft: '32px',
     textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
     '-webkit-transform': 'skewX(-16deg)',
     '-moz-transform': 'skewX(-16deg)',
@@ -1622,7 +1622,7 @@ var Keyboard = function() {
     fontWeight: 'bold'
   });
   slide1.addText(text1);
-  var me = new Slide('Jaydson');
+  var me = new RegularSlide('Jaydson');
   me.style.set({backgroundColor: '#09311E'});
   var bio = new Text('<span style="font-style:italic;font-size:1.3em;color:#F3EA1A">~Jaydson Gomes~ </span><br> * Entusiasta JavaScript <br> * FrontEnd Engineer no Terra <br> * Curador da BrazilJS Conf/RSJS/FrontInPoa');
   bio.style.set({
@@ -1634,17 +1634,17 @@ var Keyboard = function() {
     fontWeight: 'bold'
   });
   me.addText(bio);
-  var enthusiasm1 = new Slide('enthusiasm');
+  var enthusiasm1 = new RegularSlide('enthusiasm');
   enthusiasm1.setBackgroundImage('img/superhtml5.jpeg');
-  var enthusiasm2 = new Slide('enthusiasm 2');
+  var enthusiasm2 = new RegularSlide('enthusiasm 2');
   enthusiasm2.setBackgroundImage('img/jesus.jpg');
-  var douglas = new Slide('Douglas');
+  var douglas = new RegularSlide('Douglas');
   douglas.setBackgroundImage('img/douglas.jpg');
-  var brendan = new Slide('Brendan');
+  var brendan = new RegularSlide('Brendan');
   brendan.setBackgroundImage('img/brendan.jpeg');
-  var futurenow = new Slide('futurenow');
+  var futurenow = new RegularSlide('futurenow');
   futurenow.setBackgroundImage('img/future-now.gif');
-  var cronograma = new Slide('Cronograma');
+  var cronograma = new RegularSlide('Cronograma');
   cronograma.style.set({backgroundColor: '#09311E'});
   var list = ['História', 'Arrows functions', 'Classes', 'Template Strings', 'default/rest/spread params', 'let + const', 'modules', 'promises'];
   var textCronograma = new Text(("<span style=\"font-style:italic;font-size:1.4em\">~Cronograma~ </span><br>\n\t\t \t\t\t\t\t\t\t<ul style=\"font-size:0.8em\">\n\t\t \t\t\t\t\t\t\t\t<li>" + list[0] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[1] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[2] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[3] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[4] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[5] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[6] + "</li>\n\t\t\t\t\t\t\t\t\t\t<li>" + list[7] + "</li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t  "));
@@ -1657,9 +1657,9 @@ var Keyboard = function() {
     fontWeight: 'bold'
   });
   cronograma.addText(textCronograma);
-  var historia = new Slide('historia');
+  var historia = new RegularSlide('historia');
   historia.setBackgroundImage('img/senta-que-la-vem-historia.gif');
-  var nineties = new Slide('nineties');
+  var nineties = new RegularSlide('nineties');
   nineties.style.set({backgroundColor: '#09311E'});
   var ninetiesT = new Text("\n\t\t<div style=\"font-style:italic;font-size:3.2em\">~1995~</div>\n\t\t<div>Mocha</div>\n\t\t<div>LiveScript</div>\n\t\t<div>JavaScript</div>\n\t\t<div>ECMAScript</div>\n\t");
   ninetiesT.style.set({
@@ -1671,7 +1671,7 @@ var Keyboard = function() {
     fontWeight: 'bold'
   });
   nineties.addText(ninetiesT);
-  var ninetiesECMA3 = new Slide('ninetiesECMA3');
+  var ninetiesECMA3 = new RegularSlide('ninetiesECMA3');
   ninetiesECMA3.style.set({backgroundColor: '#09311E'});
   var ninetiesECMA3T = new Text("\n\t\t<div style=\"font-style:italic;font-size:2.2em\">~1999 - ES3~</div>\n\t\t<div>Versão suportada na maioria dos browsers</div>\n\t\t<div>Introduziu algumas features como expressões regulares, try/catch, entre outras</div>\n\t");
   ninetiesECMA3T.style.set({
@@ -1683,9 +1683,9 @@ var Keyboard = function() {
     fontWeight: 'bold'
   });
   ninetiesECMA3.addText(ninetiesECMA3T);
-  var brendanYoung = new Slide('brendanYoung');
+  var brendanYoung = new RegularSlide('brendanYoung');
   brendanYoung.setBackgroundImage('img/brendan-young.jpg');
-  var ecma262 = new Slide('historia');
+  var ecma262 = new RegularSlide('historia');
   ecma262.style.set({backgroundColor: '#09311E'});
   var ecma262Text = new Text("ECMA-262");
   ecma262Text.style.set({
@@ -1697,7 +1697,7 @@ var Keyboard = function() {
     marginTop: '1em'
   });
   ecma262.addText(ecma262Text);
-  var ninetiesECMA4 = new Slide('ninetiesECMA4');
+  var ninetiesECMA4 = new RegularSlide('ninetiesECMA4');
   ninetiesECMA4.style.set({backgroundColor: '#09311E'});
   var ninetiesECMA4T = new Text("\n\t\t<div style=\"font-style:italic;font-size:2.2em\">~2008 - ES4~</div>\n\t\t<div>Versão abandonada :(</div>\n\t");
   ninetiesECMA4T.style.set({
@@ -1709,7 +1709,7 @@ var Keyboard = function() {
     fontWeight: 'bold'
   });
   ninetiesECMA4.addText(ninetiesECMA4T);
-  var ninetiesECMA5 = new Slide('ninetiesECMA5');
+  var ninetiesECMA5 = new RegularSlide('ninetiesECMA5');
   ninetiesECMA5.style.set({backgroundColor: '#09311E'});
   var ninetiesECMA5T = new Text("\n\t\t<div style=\"font-style:italic;font-size:2.2em\">~2009 - ES5~</div>\n\t\t<div> Várias melhorias na linguagem</div>\n\t\t<div><a target=\"_blank\" href=\"http://kangax.github.io/es5-compat-table/\">es5-compat-table</a> by @kangax</div>\n\t");
   ninetiesECMA5T.style.set({
@@ -1721,9 +1721,9 @@ var Keyboard = function() {
     fontWeight: 'bold'
   });
   ninetiesECMA5.addText(ninetiesECMA5T);
-  var coffee = new Slide('coffee');
+  var coffee = new RegularSlide('coffee');
   coffee.setBackgroundImage('img/coffeescript.jpg');
-  var coruja = new Slide('coruja');
+  var coruja = new RegularSlide('coruja');
   coruja.style.set({
     backgroundColor: '#000',
     textAlign: 'center',
@@ -1732,9 +1732,9 @@ var Keyboard = function() {
   var imgCoruja = new Image('img/coruja.jpg');
   imgCoruja.style.set({minHeight: '100%'});
   coruja.addImage(imgCoruja);
-  var dart = new Slide('dart');
+  var dart = new RegularSlide('dart');
   dart.setBackgroundImage('img/dart.jpg');
-  var gato = new Slide('gato');
+  var gato = new RegularSlide('gato');
   gato.style.set({
     backgroundColor: '#000',
     textAlign: 'center',
@@ -1743,9 +1743,9 @@ var Keyboard = function() {
   var imgGato = new Image('img/gato.gif');
   imgGato.style.set({minHeight: '100%'});
   gato.addImage(imgGato);
-  var type = new Slide('type');
+  var type = new RegularSlide('type');
   type.setBackgroundImage('img/typescript.jpg');
-  var ape = new Slide('ape');
+  var ape = new RegularSlide('ape');
   ape.style.set({
     backgroundColor: '#000',
     textAlign: 'center',
@@ -1754,9 +1754,9 @@ var Keyboard = function() {
   var imgApe = new Image('img/ape.jpg');
   imgApe.style.set({minHeight: '100%'});
   ape.addImage(imgApe);
-  var fuckometer = new Slide('fuckometer');
+  var fuckometer = new RegularSlide('fuckometer');
   fuckometer.setBackgroundImage('img/fuckometer.gif');
-  var ecma6 = new Slide('ecma6');
+  var ecma6 = new RegularSlide('ecma6');
   ecma6.style.set({backgroundColor: '#09311E'});
   var ecma6T = new Text("ES6");
   ecma6T.style.set({
@@ -1767,20 +1767,20 @@ var Keyboard = function() {
     color: '#fff'
   });
   ecma6.addText(ecma6T);
-  var jake = new Slide('jake');
+  var jake = new RegularSlide('jake');
   jake.setBackgroundImage('img/jake.gif');
-  var arrows = new Slide('arrows');
+  var arrows = new RegularSlide('arrows');
   arrows.style.set({backgroundColor: '#09311E'});
   var arrowsT = new Text("Arrows");
   arrowsT.style.set({
-    fontSize: '6.5em',
+    fontSize: '5.5em',
     textAlign: 'center',
     textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
     fontWeight: 'bold',
     color: '#fff'
   });
   arrows.addText(arrowsT);
-  var arrowsS = new Slide('arrows-syntax');
+  var arrowsS = new RegularSlide('arrows-syntax');
   arrowsS.style.set({backgroundColor: '#09311E'});
   var arrowsST = new Text("=>");
   arrowsST.style.set({
@@ -1791,7 +1791,7 @@ var Keyboard = function() {
     color: '#fff'
   });
   arrowsS.addText(arrowsST);
-  var arrowsC = new Slide('arrows-characteristics');
+  var arrowsC = new RegularSlide('arrows-characteristics');
   arrowsC.style.set({backgroundColor: '#09311E'});
   var arrowsCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>Lexical this binding</li>\n\t\t\t<li>Not newable</li>\n\t\t\t<li>Can’t change this</li>\n\t\t\t<li>Always anonymus</li>\n\t\t</ul>\n\t");
   arrowsCT.style.set({
@@ -1802,51 +1802,40 @@ var Keyboard = function() {
     fontSize: '1.2em'
   });
   arrowsC.addText(arrowsCT);
-  var arrowsExample = new Slide('arrows-example');
+  var arrowsExample = new RegularSlide('arrows-example');
   arrowsExample.style.set({
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var arrowsExampleT = new Text("\n\t\t<h1>Arrows - Exemplo 1</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hst76yeh/\"></iframe>\n\t");
+  var arrowsExampleT = new Text("\n\t\t<h1>Arrows - Exemplo 1</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen src=\"http://localhost:8081/examples/arrows/\"></iframe>\n\t");
   arrowsExampleT.style.set({
     width: '100%',
     height: '100%'
   });
   arrowsExample.addText(arrowsExampleT);
-  var arrowsExample1 = new Slide('arrows-example1');
+  var arrowsExample1 = new RegularSlide('arrows-example1');
   arrowsExample1.style.set({
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var arrowsExampleT1 = new Text("\n\t\t<h1>Arrows - Exemplo 2</h1>\n\t\t<iframe width=\"100%\" height=\"300\" src=\"http://jsfiddle.net/bmBAE/embedded/\" allowfullscreen=\"allowfullscreen\" frameborder=\"0\"></iframe>\n\t");
+  var arrowsExampleT1 = new Text("\n\t\t<h1>Arrows - Exemplo 2</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" src=\"http://jsfiddle.net/bmBAE/embedded/\" allowfullscreen=\"allowfullscreen\" frameborder=\"0\"></iframe>\n\t");
   arrowsExampleT1.style.set({
     width: '100%',
     height: '100%'
   });
   arrowsExample1.addText(arrowsExampleT1);
-  var arrowsExample2 = new Slide('arrows-example2');
-  arrowsExample2.style.set({
-    backgroundColor: '#09311E',
-    padding: '0'
-  });
-  var arrowsExampleT2 = new Text("\n\t\t<h1>Arrows - Exemplo 3</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hst6dkb7/\"></iframe>\n\t");
-  arrowsExampleT2.style.set({
-    width: '100%',
-    height: '100%'
-  });
-  arrowsExample2.addText(arrowsExampleT2);
-  var classes = new Slide('classes');
+  var classes = new RegularSlide('classes');
   classes.style.set({backgroundColor: '#09311E'});
   var classesT = new Text("Classes");
   classesT.style.set({
-    fontSize: '5.5em',
+    fontSize: '4.5em',
     textAlign: 'center',
     textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
     fontWeight: 'bold',
     color: '#fff'
   });
   classes.addText(classesT);
-  var classesC = new Slide('classes-characteristics');
+  var classesC = new RegularSlide('classes-characteristics');
   classesC.style.set({backgroundColor: '#09311E'});
   var classesCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>OO clássica</li>\n\t\t\t<li>super call</li>\n\t\t\t<li>static methods</li>\n\t\t\t<li>constructors</li>\n\t\t</ul>\n\t");
   classesCT.style.set({
@@ -1857,29 +1846,29 @@ var Keyboard = function() {
     fontSize: '1.2em'
   });
   classesC.addText(classesCT);
-  var classesExample = new Slide('classes-example');
+  var classesExample = new RegularSlide('classes-example');
   classesExample.style.set({
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var classesExampleT = new Text("\n\t\t<h1>Classes - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hsv688sz/\"></iframe>\n\t");
+  var classesExampleT = new Text("\n\t\t<h1>Classes - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen src=\"http://localhost:8081/examples/classes/\"></iframe>\n\t");
   classesExampleT.style.set({
     width: '100%',
     height: '100%'
   });
   classesExample.addText(classesExampleT);
-  var classesExample1 = new Slide('classes-example1');
+  var classesExample1 = new RegularSlide('classes-example1');
   classesExample1.style.set({
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var classesExampleT1 = new Text("\n\t\t<h1>Classes - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" src=\"http://jsfiddle.net/AAbm8/embedded/\" allowfullscreen=\"allowfullscreen\" frameborder=\"0\"></iframe>\n\t");
+  var classesExampleT1 = new Text("\n\t\t<h1>Classes - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" src=\"http://jsfiddle.net/AAbm8/embedded/\" allowfullscreen=\"allowfullscreen\" frameborder=\"0\"></iframe>\n\t");
   classesExampleT1.style.set({
     width: '100%',
     height: '100%'
   });
   classesExample1.addText(classesExampleT1);
-  var tplstrings = new Slide('template-strings');
+  var tplstrings = new RegularSlide('template-strings');
   tplstrings.style.set({backgroundColor: '#09311E'});
   var tplstringsT = new Text("Template Strings");
   tplstringsT.style.set({
@@ -1890,7 +1879,7 @@ var Keyboard = function() {
     color: '#fff'
   });
   tplstrings.addText(tplstringsT);
-  var tplStringsC = new Slide('template-strings-characteristics');
+  var tplStringsC = new RegularSlide('template-strings-characteristics');
   tplStringsC.style.set({backgroundColor: '#09311E'});
   var tplStringsCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>Multiline strings</li>\n\t\t\t<li>Basic string formatting</li>\n\t\t\t<li>HTML escaping</li>\n\t\t\t<li>Localization of strings</li>\n\t\t</ul>\n\t");
   tplStringsCT.style.set({
@@ -1901,18 +1890,18 @@ var Keyboard = function() {
     fontSize: '1.2em'
   });
   tplStringsC.addText(tplStringsCT);
-  var tplStringsExample = new Slide('template-strings-example');
+  var tplStringsExample = new RegularSlide('template-strings-example');
   tplStringsExample.style.set({
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var tplStringsExampleT = new Text("\n\t\t<h1>Template strings - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hsv8wrep/\"></iframe>\n\t");
+  var tplStringsExampleT = new Text("\n\t\t<h1>Template strings - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen src=\"http://localhost:8081/examples/template-strings/\"></iframe>\n\t");
   tplStringsExampleT.style.set({
     width: '100%',
     height: '100%'
   });
   tplStringsExample.addText(tplStringsExampleT);
-  var default_rest_spread = new Slide('Paramaters');
+  var default_rest_spread = new RegularSlide('Paramaters');
   default_rest_spread.style.set({backgroundColor: '#09311E'});
   var default_rest_spreadT = new Text("Paramaters");
   default_rest_spreadT.style.set({
@@ -1923,7 +1912,7 @@ var Keyboard = function() {
     color: '#fff'
   });
   default_rest_spread.addText(default_rest_spreadT);
-  var default_rest_spreadC = new Slide('default_rest_spread_characteristics');
+  var default_rest_spreadC = new RegularSlide('default_rest_spread_characteristics');
   default_rest_spreadC.style.set({backgroundColor: '#09311E'});
   var default_rest_spreadCCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>Rest</li>\n\t\t\t<li>Spread</li>\n\t\t\t<li>Default</li>\n\t\t</ul>\n\t");
   default_rest_spreadCCT.style.set({
@@ -1934,18 +1923,18 @@ var Keyboard = function() {
     fontSize: '1.2em'
   });
   default_rest_spreadC.addText(default_rest_spreadCCT);
-  var default_rest_spreadExample = new Slide('default_rest_spreadExample-example');
+  var default_rest_spreadExample = new RegularSlide('default_rest_spreadExample-example');
   default_rest_spreadExample.style.set({
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var default_rest_spreadExampleT = new Text("\n\t\t<h1>Rest/Spread/Default - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hsw6mqvi/\"></iframe>\n\t");
+  var default_rest_spreadExampleT = new Text("\n\t\t<h1>Rest/Spread/Default - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen src=\"http://localhost:8081/examples/parameters/\"></iframe>\n\t");
   default_rest_spreadExampleT.style.set({
     width: '100%',
     height: '100%'
   });
   default_rest_spreadExample.addText(default_rest_spreadExampleT);
-  var block = new Slide('block-scope');
+  var block = new RegularSlide('block-scope');
   block.style.set({backgroundColor: '#09311E'});
   var blockT = new Text("Block Scope");
   blockT.style.set({
@@ -1956,7 +1945,7 @@ var Keyboard = function() {
     color: '#fff'
   });
   block.addText(blockT);
-  var blockC = new Slide('block_characteristics');
+  var blockC = new RegularSlide('block_characteristics');
   blockC.style.set({backgroundColor: '#09311E'});
   var blockCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t<li>let</li>\n\t\t\t<li>const</li>\n\t\t</ul>\n\t");
   blockCT.style.set({
@@ -1967,18 +1956,18 @@ var Keyboard = function() {
     fontSize: '1.2em'
   });
   blockC.addText(blockCT);
-  var blockExample = new Slide('block-example');
+  var blockExample = new RegularSlide('block-example');
   blockExample.style.set({
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var blockExampleT = new Text("\n\t\t<h1>Block Scope - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hswm5cid/\"></iframe>\n\t");
+  var blockExampleT = new Text("\n\t\t<h1>Block Scope - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen src=\"http://localhost:8081/examples/block-scope/\"></iframe>\n\t");
   blockExampleT.style.set({
     width: '100%',
     height: '100%'
   });
   blockExample.addText(blockExampleT);
-  var moduleSlide = new Slide('module');
+  var moduleSlide = new RegularSlide('module');
   moduleSlide.style.set({backgroundColor: '#09311E'});
   var moduleSlideT = new Text("Module");
   moduleSlideT.style.set({
@@ -1989,7 +1978,7 @@ var Keyboard = function() {
     color: '#fff'
   });
   moduleSlide.addText(moduleSlideT);
-  var moduleSlideC = new Slide('module_characteristics');
+  var moduleSlideC = new RegularSlide('module_characteristics');
   moduleSlideC.style.set({backgroundColor: '#09311E'});
   var moduleSlideCT = new Text("\n\t\t<ul style=\"font-size:0.8em\">\n\t\t\t\n\t\t</ul>\n\t");
   moduleSlideCT.style.set({
@@ -2000,7 +1989,7 @@ var Keyboard = function() {
     fontSize: '1.2em'
   });
   moduleSlideC.addText(moduleSlideCT);
-  var viva = new Slide('viva');
+  var viva = new RegularSlide('viva');
   ape.style.set({
     backgroundColor: '#000',
     textAlign: 'center',
@@ -2009,18 +1998,18 @@ var Keyboard = function() {
   var imgViva = new Image('img/viva.jpg');
   imgViva.style.set({minHeight: '100%'});
   viva.addImage(imgViva);
-  var moduleExample = new Slide('module-example');
+  var moduleExample = new RegularSlide('module-example');
   moduleExample.style.set({
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var moduleExampleT = new Text("\n\t\t<h1>Module - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hswmt17n/\"></iframe>\n\t");
+  var moduleExampleT = new Text("\n\t\t<h1>Module - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen src=\"http://localhost:8081/examples/module/\"></iframe>\n\t");
   moduleExampleT.style.set({
     width: '100%',
     height: '100%'
   });
   moduleExample.addText(moduleExampleT);
-  var promiseImage = new Slide('promise-image');
+  var promiseImage = new RegularSlide('promise-image');
   promiseImage.style.set({
     backgroundColor: '#000',
     textAlign: 'center',
@@ -2029,7 +2018,7 @@ var Keyboard = function() {
   var promiseImageSrc = new Image('img/promise.jpg');
   promiseImageSrc.style.set({minHeight: '100%'});
   promiseImage.addImage(promiseImageSrc);
-  var promiseSlide = new Slide('promise');
+  var promiseSlide = new RegularSlide('promise');
   promiseSlide.style.set({backgroundColor: '#09311E'});
   var promiseSlideT = new Text("Promises");
   promiseSlideT.style.set({
@@ -2040,7 +2029,7 @@ var Keyboard = function() {
     color: '#fff'
   });
   promiseSlide.addText(promiseSlideT);
-  var promiseSlideC = new Slide('promises_characteristics');
+  var promiseSlideC = new RegularSlide('promises_characteristics');
   promiseSlideC.style.set({backgroundColor: '#09311E'});
   var promiseSlideCT = new Text("\n\t\t<ul style=\"font-size:0.6em\">\n\t\t\t<li>Uma promise representa um valor não necessariamente conhecido no seu tempo de criação</li>\n\t\t\t<li>Promises permitem associar handlers de sucesso ou erro de uma ação assíncrona</li>\n\t\t\t<li>Isso permite que métodos assíncronos retornem valores como métodos ~síncronos~</li>\n\t\t\t<li>Ao invés do valor final, o método assíncrono retorna uma promessa de ter um valor em algum momento no futuro</li>\n\t\t</ul>\n\t");
   promiseSlideCT.style.set({
@@ -2051,18 +2040,51 @@ var Keyboard = function() {
     fontSize: '1.2em'
   });
   promiseSlideC.addText(promiseSlideCT);
-  var promiseExample = new Slide('promise-example');
+  var promiseExample = new RegularSlide('promise-example');
   promiseExample.style.set({
     backgroundColor: '#09311E',
     padding: '0'
   });
-  var promiseExampleT = new Text("\n\t\t<h1>Promises - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"300\" frameborder=\"0\" allowfullscreen src=\"http://www.es6fiddle.net/embed/hswp4eb2/\"></iframe>\n\t");
+  var promiseExampleT = new Text("\n\t\t<h1>Promises - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen src=\"http://localhost:8081/examples/promises/\"></iframe>\n\t");
   promiseExampleT.style.set({
     width: '100%',
     height: '100%'
   });
   promiseExample.addText(promiseExampleT);
-  var how = new Slide('how');
+  var collections = new RegularSlide('collections');
+  collections.style.set({backgroundColor: '#09311E'});
+  var collectionsT = new Text("Collections");
+  collectionsT.style.set({
+    fontSize: '3.5em',
+    textAlign: 'center',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff'
+  });
+  collections.addText(collectionsT);
+  var collectionsC = new RegularSlide('collections_characteristics');
+  collectionsC.style.set({backgroundColor: '#09311E'});
+  var collectionsCT = new Text("\n\t\t<ul style=\"font-size:0.6em\">\n\t\t\t<li>Novos tipos de collections</li>\n\t\t\t<li>Melhor e mais eficiente armazenamento/ordenação</li>\n\t\t</ul>\n\t");
+  collectionsCT.style.set({
+    fontSize: '4.5em',
+    textShadow: '4px 4px 2px rgba(10, 10, 10, 1)',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: '1.2em'
+  });
+  collectionsC.addText(collectionsCT);
+  var setExample = new RegularSlide('set-example');
+  setExample.style.set({
+    backgroundColor: '#09311E',
+    padding: '0'
+  });
+  var setExampleT = new Text("\n\t\t<h1>Set(Lista ordenada sem duplicatas) - Exemplo</h1>\n\t\t<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen src=\"http://localhost:8081/examples/collections/\"></iframe>\n\t");
+  setExampleT.style.set({
+    width: '100%',
+    height: '100%'
+  });
+  setExample.addText(setExampleT);
+  var how = new RegularSlide('how');
   how.style.set({backgroundColor: '#09311E'});
   var howT = new Text("Como usar hoje?");
   howT.style.set({
@@ -2073,9 +2095,9 @@ var Keyboard = function() {
     color: '#fff'
   });
   how.addText(howT);
-  var caseSlide = new Slide('case');
+  var caseSlide = new RegularSlide('case');
   caseSlide.style.set({backgroundColor: '#09311E'});
-  var traceur = new Slide('traceur');
+  var traceur = new RegularSlide('traceur');
   traceur.setBackgroundImage('img/tc.png');
   var traceurLink = new Text("\n\t\t<a href=\"https://github.com/google/traceur-compiler\">https://github.com/google/traceur-compiler</a>\n\t");
   traceurLink.style.set({
@@ -2087,7 +2109,7 @@ var Keyboard = function() {
     marginTop: '25px'
   });
   traceur.addText(traceurLink);
-  var es6table = new Slide('es6table');
+  var es6table = new RegularSlide('es6table');
   es6table.style.set({backgroundColor: '#09311E'});
   var es6tableT = new Text("\n\t\t<h1>Tabela ES6</h1>\n\t\t<a href=\"http://kangax.github.io/es5-compat-table/es6/\">http://kangax.github.io/es5-compat-table/es6/</a>\n\t");
   es6tableT.style.set({
@@ -2107,7 +2129,7 @@ var Keyboard = function() {
     color: '#fff'
   });
   caseSlide.addText(caseSlideT);
-  var end = new Slide('end');
+  var end = new RegularSlide('end');
   end.style.set({backgroundColor: '#09311E'});
   var endT = new Text("\n\t\t<a href=\"https://github.com/jaydson/js-future-in-the-present\">https://github.com/jaydson/js-future-in-the-present</a><br>\n\t\t<a href=\"https://github.com/jaydson/es6slider\">https://github.com/jaydson/es6slider</a>\n\t");
   endT.style.set({
@@ -2118,6 +2140,8 @@ var Keyboard = function() {
     color: '#fff'
   });
   end.addText(endT);
-  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(arrows).addSlide(arrowsS).addSlide(arrowsC).addSlide(arrowsExample).addSlide(arrowsExample1).addSlide(arrowsExample2).addSlide(classes).addSlide(classesC).addSlide(classesExample).addSlide(classesExample1).addSlide(tplstrings).addSlide(tplStringsC).addSlide(tplStringsExample).addSlide(default_rest_spread).addSlide(default_rest_spreadC).addSlide(default_rest_spreadExample).addSlide(block).addSlide(blockC).addSlide(blockExample).addSlide(moduleSlide).addSlide(viva).addSlide(moduleExample).addSlide(promiseImage).addSlide(promiseSlide).addSlide(promiseSlideC).addSlide(promiseExample).addSlide(how).addSlide(futurenow).addSlide(traceur).addSlide(es6table).addSlide(caseSlide).addSlide(end).render();
+  var jay = new RegularSlide('jay');
+  jay.setBackgroundImage('img/jaydson.png');
+  es6slider.addSlide(slide1).addSlide(me).addSlide(enthusiasm1).addSlide(enthusiasm2).addSlide(douglas).addSlide(brendan).addSlide(cronograma).addSlide(historia).addSlide(brendanYoung).addSlide(nineties).addSlide(ecma262).addSlide(ninetiesECMA3).addSlide(ninetiesECMA4).addSlide(ninetiesECMA5).addSlide(coffee).addSlide(coruja).addSlide(dart).addSlide(gato).addSlide(type).addSlide(ape).addSlide(fuckometer).addSlide(ecma6).addSlide(jake).addSlide(arrows).addSlide(arrowsS).addSlide(arrowsC).addSlide(arrowsExample).addSlide(arrowsExample1).addSlide(classes).addSlide(classesC).addSlide(classesExample).addSlide(classesExample1).addSlide(tplstrings).addSlide(tplStringsC).addSlide(tplStringsExample).addSlide(default_rest_spread).addSlide(default_rest_spreadC).addSlide(default_rest_spreadExample).addSlide(block).addSlide(blockC).addSlide(blockExample).addSlide(moduleSlide).addSlide(viva).addSlide(moduleExample).addSlide(promiseImage).addSlide(promiseSlide).addSlide(promiseSlideC).addSlide(promiseExample).addSlide(collections).addSlide(collectionsC).addSlide(setExample).addSlide(how).addSlide(futurenow).addSlide(traceur).addSlide(es6table).addSlide(caseSlide).addSlide(end).addSlide(jay).render();
   console.log(es6slider);
 }());
